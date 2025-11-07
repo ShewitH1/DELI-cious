@@ -1,16 +1,17 @@
 package com.pluralsight;
 
-public class Sandwich {
+public class Sandwich extends ProdcutOrder{
     private String bread;
     private int length;
     private boolean toasted;
-    private double price;
+    private double pricee;
 
-    public Sandwich(String bread, int length, boolean toasted, double price) {
+    public Sandwich(String name, double price, String bread, int length, boolean toasted, double pricee) {
+        super(name, price);
         this.bread = bread;
         this.length = length;
         this.toasted = toasted;
-        this.price = calculate_size_price(length);
+        this.pricee = calculate_size_price(length);
     }
 
 
@@ -51,5 +52,10 @@ public class Sandwich {
 
     public void setToasted(boolean toasted) {
         this.toasted = toasted;
+    }
+
+    @Override
+    public String getDescription() {
+        return length + " inch " + bread + " sandwich" + (toasted ? " (toasted)" : "");
     }
 }

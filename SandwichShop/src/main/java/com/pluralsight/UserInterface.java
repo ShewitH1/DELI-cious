@@ -21,7 +21,7 @@ public class UserInterface {
             switch (command) {
                 case 1:
                     //Order Screen - New Order
-                    Order.Order_Screen();
+                    OrderMenu.Order_Screen();
 
                     break;
 

@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Order {
+public class OrderMenu {
     public static void Order_Screen(){
         String Order_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
@@ -53,6 +53,26 @@ public class Order {
                         break;
                 }
             }
+
+        }
+
+        //Adding Sandwich method
+        public void addSandwich(){
+
+        }
+
+        //Adding Drink method
+        public void addDrink(){
+
+        }
+
+        //Adding Chips method
+        public void addChips(){
+
+        }
+
+        //Checkout method
+        public void checkout(){
 
         }
     }
