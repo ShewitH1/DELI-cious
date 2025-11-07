@@ -1,12 +1,17 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sandwich extends ProdcutOrder{
     private String bread;
     private int length;
     private boolean toasted;
 //    private double pricee;
+    private List<Topping> toppings = new ArrayList<>();
 
-    public Sandwich(String name, double price, String bread, int length, boolean toasted, double pricee) {
+
+    public Sandwich(String name, String bread, int length, boolean toasted) {
         super(name);
         this.bread = bread;
         this.length = length;
@@ -17,12 +22,17 @@ public class Sandwich extends ProdcutOrder{
 
     @Override
     public double calculatePrice() {
-        return switch (length) {
+        double basePrice = switch (length) {
             case 4 -> 5.50;
             case 8 -> 7.00;
             case 12 -> 8.50;
             default -> 0.0;
         };
+
+        for(Topping topping : toppings){
+            basePrice += topping.ge
+
+        }
     }
 
 
@@ -40,6 +50,10 @@ public class Sandwich extends ProdcutOrder{
 //            return 0.0;
 //        }
 //    }
+
+    public void addTopping(Topping topping){
+        toppings.add(topping);
+    }
 
     public String getBread() {
         return bread;
