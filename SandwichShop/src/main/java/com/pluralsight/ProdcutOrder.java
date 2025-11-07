@@ -4,9 +4,9 @@ public abstract class ProdcutOrder {
     private String name;
     private double price;
 
-    public ProdcutOrder(String name, double price) {
+    public ProdcutOrder(String name) {
         this.name = name;
-        this.price = price;
+//        this.price = price;
     }
 
     public String getName() {
@@ -27,4 +27,7 @@ public abstract class ProdcutOrder {
 
     //Each subclass - Sandwich, Drink, Chips - will override this
     public abstract String getDescription();
+
+    //create abstract for calculate
+    public abstract double calculatePrice();
 }
