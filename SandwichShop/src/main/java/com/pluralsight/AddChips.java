@@ -1,7 +1,13 @@
 package com.pluralsight;
 
 public class AddChips {
-    public static void chips_screen(){
+    public static Chips chips_screen(){
+        //empty flavor
+        String flavor = " ";
+
+        //make sure to make chips empty - null
+        Chips chips = null;
+
         String chips_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
                 --------------Add Chips Menu------------
@@ -21,21 +27,29 @@ public class AddChips {
 
             switch (command) {
                 case 1:
+                    //flavor for classic
+
                 case 2:
+                    //flavor for BBQ
+
                 case 3:
-                    // Set Chip Type
+                    //flavor for sour
+
                     break;
                 case 4:
-                    // Confirm Chips
+
                     System.out.println("Chips added successfully!");
-                    return;
+
+                    break;
                 case 0:
                     System.out.println("Returning to Order Screen...");
-                    return;
+
+                    break;
                 default:
                     System.out.println("Invalid choice. Try again.");
                     break;
             }
         }
+        return chips;
     }
 }

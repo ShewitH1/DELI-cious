@@ -91,6 +91,7 @@ public class Topping {
 
     @Override
     public String toString() {
-        return name + " (" + category + (isExtraCount > 0 ? ", extra x" + isExtraCount + ")" : ")");
+        String extra = isExtraCount > 0 ? " (extra x" + isExtraCount + ")" : "";
+        return name + " [" + category + "]" + extra;
     }
 }
