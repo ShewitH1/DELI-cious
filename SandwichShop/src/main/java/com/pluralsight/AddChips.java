@@ -50,6 +50,28 @@ public class AddChips {
                     break;
             }
         }
+        return null;
+    }
+
+    //make sure I put helper methods
+    private static String processSelectFlavor(String flavorChoice ){
+        System.out.println("Selected flavor: " + flavorChoice);
+        return flavorChoice;
+    }
+
+    private static  Chips processConfirmChips(String flavor){
+        if(flavor.isEmpty()){
+            System.out.println("Please select a chip flavor before confirmingQ ");
+            return null;
+        }
+
+        //make object
+        Chips chips = new Chips("Chips", 1.50, flavor);
+        System.out.println("Chips added: " + chips);
         return chips;
+    }
+
+    private static void processCancel(){
+        System.out.println("Returning to Order Screen...");
     }
 }

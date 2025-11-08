@@ -27,6 +27,7 @@ public class Order {
 //        System.out.println("Total: $" + String.format("%.2f", getTotal()));
 //    }
 
+    //might add toppings and sauces to reciept
     public void printReceipt(){
         System.out.println("Your Order: ");
         for(ProdcutOrder p : products){
