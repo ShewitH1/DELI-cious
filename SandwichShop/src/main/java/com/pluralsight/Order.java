@@ -28,6 +28,14 @@ public class Order {
 //    }
 
     public void printReceipt(){
+        System.out.println("Your Order: ");
+        for(ProdcutOrder p : products){
+            if (p instanceof Sandwich){
+                System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
+            } else if (p instanceof Drink) {
+                System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
+            }
+        }
 
     }
 
