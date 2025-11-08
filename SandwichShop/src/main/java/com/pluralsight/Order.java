@@ -35,8 +35,11 @@ public class Order {
             } else if (p instanceof Drink) {
                 System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
             }
+            else if (p instanceof Chips){
+                System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
+            }
         }
-
+        System.out.println("Total: $" + String.format("%.2f", getTotal()));
     }
 
     public ArrayList<ProdcutOrder> getProducts() {
