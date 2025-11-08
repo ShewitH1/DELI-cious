@@ -19,13 +19,14 @@ public class Drink extends ProdcutOrder{
 
     @Override
     public double calculatePrice() {
-        return switch(size.toLowerCase()) {
-            case "small" -> 2.00;
-            case "medium" -> 2.50;
-            case "large" -> 3.00;
-            default -> 0.0;
-        };
+        switch (size.toLowerCase()){
+            case "small": return 2.00;
+            case "medium": return 2.50;
+            case "large": return 3.00;
+            default: return 0.0;
+        }
     }
+
 
 //    private double getSizePrice(String size){
 //        return switch(size.toLowerCase()) {
