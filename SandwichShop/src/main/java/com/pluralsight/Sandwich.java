@@ -86,6 +86,26 @@ public class Sandwich extends ProdcutOrder{
 //        return total;
 //    }
 
+    @Override
+    public double calculatePrice() {
+        double total = basePriceBySize(length);
+        for(Topping t : toppings){
+            total += t.getPriceForSize(length);
+        }
+        return total;
+    }
+
+    private double basePriceBySize(int size){
+        switch (size){
+            case 4: return 5.50;
+            case 8: return 7.00;
+            case 12: return 8.50;
+            default: return 0.0;
+        }
+    }
+
+
+
     public void addTopping(Topping topping){
         toppings.add(topping);
     }
@@ -96,7 +116,7 @@ public class Sandwich extends ProdcutOrder{
 
     public void setBread(String bread) {
         this.bread = bread;
-        setPrice(calculatePrice());
+//        setPrice(calculatePrice());
     }
 
     public int getLength() {
@@ -105,7 +125,7 @@ public class Sandwich extends ProdcutOrder{
 
     public void setLength(int length) {
         this.length = length;
-        setPrice(calculatePrice());
+//        setPrice(calculatePrice());
     }
 
     public boolean isToasted() {
@@ -120,6 +140,7 @@ public class Sandwich extends ProdcutOrder{
     public String getDescription() {
         return length + " inch " + bread + " sandwich" + (toasted ? " (toasted)" : "");
     }
+
 }
 
 
