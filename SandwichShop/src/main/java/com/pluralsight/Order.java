@@ -13,17 +13,22 @@ public class Order {
     public double getTotal() {
         double total = 0.0;
         for (ProdcutOrder p : products) {
-            total += p.getPrice();
+//            total += p.getPrice();
+            total += p.calculatePrice();
         }
         return total;
     }
 
-    public void printReceipt() {
-        System.out.println("Your Order:");
-        for (ProdcutOrder p : products) {
-            System.out.println("- " + p.getDescription() +  " ($" + String.format("%.2f", p.getPrice()) + ")");
-        }
-        System.out.println("Total: $" + String.format("%.2f", getTotal()));
+//    public void printReceipt() {
+//        System.out.println("Your Order:");
+//        for (ProdcutOrder p : products) {
+//            System.out.println("- " + p.getDescription() +  " ($" + String.format("%.2f", p.getPrice()) + ")");
+//        }
+//        System.out.println("Total: $" + String.format("%.2f", getTotal()));
+//    }
+
+    public void printReceipt(){
+
     }
 
     public ArrayList<ProdcutOrder> getProducts() {
