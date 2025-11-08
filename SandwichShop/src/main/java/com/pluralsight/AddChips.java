@@ -5,8 +5,7 @@ public class AddChips {
         //empty flavor
         String flavor = " ";
 
-        //make sure to make chips empty - null
-        Chips chips = null;
+//        Chips chips = null;
 
         String chips_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
@@ -28,20 +27,26 @@ public class AddChips {
             switch (command) {
                 case 1:
                     //flavor for classic
+                    flavor = processSelectFlavor("Classic");
+                    break;
 
                 case 2:
                     //flavor for BBQ
+                    flavor = processSelectFlavor("BBQ");
+                    break;
 
                 case 3:
                     //flavor for sour
-
+                    flavor = processSelectFlavor("Sour Cream and Onion");
                     break;
                 case 4:
-
-                    System.out.println("Chips added successfully!");
-
+                    Chips chips = processConfirmChips(flavor);
+                    if(chips != null){
+                        return chips;
+                    }
                     break;
                 case 0:
+                    processCancel();
                     System.out.println("Returning to Order Screen...");
 
                     break;
