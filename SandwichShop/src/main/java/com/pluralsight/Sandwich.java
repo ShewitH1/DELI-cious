@@ -21,70 +21,70 @@ public class Sandwich extends ProdcutOrder{
     }
 
 
-    private double basePriceBySize(int len) {
-        return switch (len) {
-            case 4 -> 5.50;
-            case 8 -> 7.00;
-            case 12 -> 8.50;
-            default -> 0.0;
-        };
-    }
-    private double meatPriceBySize(int len) {
-        return switch (len) {
-            case 4 -> 1.00;
-            case 8 -> 2.00;
-            case 12 -> 3.00;
-            default -> 0.0;
-        };
-    }
-    private double extraMeatBySize(int len) {
-        return switch (len) {
-            case 4 -> 0.50;
-            case 8 -> 1.00;
-            case 12 -> 1.50;
-            default -> 0.0;
-        };
-    }
-    private double cheesePriceBySize(int len) {
-        return switch (len) {
-            case 4 -> 0.75;
-            case 8 -> 1.50;
-            case 12 -> 2.25;
-            default -> 0.0;
-        };
-    }
-    private double extraCheeseBySize(int len) {
-        return switch (len) {
-            case 4 -> 0.30;
-            case 8 -> 0.60;
-            case 12 -> 0.90;
-            default -> 0.0;
-        };
-    }
+//    private double basePriceBySize(int len) {
+//        return switch (len) {
+//            case 4 -> 5.50;
+//            case 8 -> 7.00;
+//            case 12 -> 8.50;
+//            default -> 0.0;
+//        };
+//    }
+//    private double meatPriceBySize(int len) {
+//        return switch (len) {
+//            case 4 -> 1.00;
+//            case 8 -> 2.00;
+//            case 12 -> 3.00;
+//            default -> 0.0;
+//        };
+//    }
+//    private double extraMeatBySize(int len) {
+//        return switch (len) {
+//            case 4 -> 0.50;
+//            case 8 -> 1.00;
+//            case 12 -> 1.50;
+//            default -> 0.0;
+//        };
+//    }
+//    private double cheesePriceBySize(int len) {
+//        return switch (len) {
+//            case 4 -> 0.75;
+//            case 8 -> 1.50;
+//            case 12 -> 2.25;
+//            default -> 0.0;
+//        };
+//    }
+//    private double extraCheeseBySize(int len) {
+//        return switch (len) {
+//            case 4 -> 0.30;
+//            case 8 -> 0.60;
+//            case 12 -> 0.90;
+//            default -> 0.0;
+//        };
+//    }
 
-    @Override
-    public double calculatePrice() {
-        double total = basePriceBySize(length);
-        // Regular toppings/sauces/sides are included ($0)
-        // Meats & cheeses are premium; extras add a surcharge
-        for (Topping t : toppings) {
-            String cat = t.getCategory().toLowerCase();
-
-            if (cat.equals("meat")) {
-                total += meatPriceBySize(length);
-                if (t.getIsExtraCount() > 0) {
-                    total += extraMeatBySize(length) * t.getIsExtraCount();
-                }
-            } else if (cat.equals("cheese")) {
-                total += cheesePriceBySize(length);
-                if (t.getIsExtraCount() > 0) {
-                    total += extraCheeseBySize(length) * t.getIsExtraCount();
-                }
-            }
-            // "regular", "sauce", "side" => included, no charge
-        }
-        return total;
-    }
+//    @Override
+//    public double calculatePrice() {
+//        double total = basePriceBySize(length);
+//        // Regular toppings/sauces/sides are included ($0)
+//        // Meats & cheeses are premium; extras add a surcharge
+//        for (Topping t : toppings) {
+//            String cat = t.getCategory().toLowerCase();
+//
+//            if (cat.equals("meat")) {
+//                total += meatPriceBySize(length);
+//                if (t.getIsExtraCount() > 0) {
+//                    total += extraMeatBySize(length) * t.getIsExtraCount();
+//                }
+//            } else if (cat.equals("cheese")) {
+//                total += cheesePriceBySize(length);
+//                if (t.getIsExtraCount() > 0) {
+//                    total += extraCheeseBySize(length) * t.getIsExtraCount();
+//                }
+//            }
+//            // "regular", "sauce", "side" => included, no charge
+//        }
+//        return total;
+//    }
 
     public void addTopping(Topping topping){
         toppings.add(topping);
