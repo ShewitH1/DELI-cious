@@ -23,8 +23,9 @@ public class Chips extends ProdcutOrder {
         return flavor + " Chips";
     }
 
+    //chips price is always 1.50
     @Override
     public double calculatePrice() {
-        return 0;
+        return 1.50;
     }
 }
