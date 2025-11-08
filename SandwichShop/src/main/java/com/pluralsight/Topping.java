@@ -70,58 +70,27 @@ public class Topping {
 //            default:
 //                return 0.0;
 //        }
-    public double getPriceForSize(int length) {
-        String cat = (category == null) ? "" : category.toLowerCase();
 
+    public double getPriceForSize(int length) {
+        String cat = category == null ? "" : category.toLowerCase();
         switch (cat) {
             case "meat": {
-                double base;
-                double extra;
-
-                if (length == 4) {
-                    base = 1.00;
-                    extra = 0.50;
-                } else if (length == 8) {
-                    base = 2.00;
-                    extra = 1.00;
-                } else {
-                    base = 3.00;
-                    extra = 1.50;
-                }
-
+                double base = length == 4 ? 1.00 : length == 8 ? 2.00 : 3.00;
+                double extra = length == 4 ? 0.50 : length == 8 ? 1.00 : 1.50;
                 return base + extra * Math.max(0, isExtraCount);
             }
-
             case "cheese": {
-                double base;
-                double extra;
-
-                if (length == 4) {
-                    base = 0.75;
-                    extra = 0.30;
-                } else if (length == 8) {
-                    base = 1.50;
-                    extra = 0.60;
-                } else {
-                    base = 2.25;
-                    extra = 0.90;
-                }
-
+                double base = length == 4 ? 0.75 : length == 8 ? 1.50 : 2.25;
+                double extra = length == 4 ? 0.30 : length == 8 ? 0.60 : 0.90;
                 return base + extra * Math.max(0, isExtraCount);
             }
-
             default:
                 return 0.0;
         }
-
-}
+    }
 
     @Override
     public String toString() {
-        return "Topping{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", isExtraCount=" + isExtraCount +
-                '}';
+        return name + " (" + category + (isExtraCount > 0 ? ", extra x" + isExtraCount + ")" : ")");
     }
 }
