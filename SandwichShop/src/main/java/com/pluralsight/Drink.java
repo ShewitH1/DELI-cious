@@ -56,6 +56,6 @@ public class Drink extends ProdcutOrder{
 
     @Override
     public String toString() {
-        return size + " " + flavor + String.format(" | $%.2f", getPrice());
+        return getDescription() + String.format(" | $%.2f", calculatePrice());
     }
 }
