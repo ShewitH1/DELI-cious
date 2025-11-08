@@ -21,8 +21,16 @@ public class Order {
     public void printReceipt() {
         System.out.println("Your Order:");
         for (ProdcutOrder p : products) {
-            System.out.println("- " + p.getDescription() + " ($" + p.getPrice() + ")");
+            System.out.println("- " + p.getDescription() +  " ($" + String.format("%.2f", p.getPrice()) + ")");
         }
-        System.out.println("Total: $" + getTotal());
+        System.out.println("Total: $" + String.format("%.2f", getTotal()));
+    }
+
+    public ArrayList<ProdcutOrder> getProducts() {
+        return products;
+    }
+
+    public boolean isEmpty(){
+        return products.isEmpty();
     }
 }

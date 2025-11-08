@@ -7,6 +7,7 @@ public class Chips extends ProdcutOrder {
 //        super(name, price);
         super(name);
         this.flavor = flavor;
+        this.setPrice(calculatePrice());
     }
 
     public String getFlavor() {
