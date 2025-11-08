@@ -53,4 +53,9 @@ public class Drink extends ProdcutOrder{
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
+
+    @Override
+    public String toString() {
+        return size + " " + flavor + String.format(" | $%.2f", getPrice());
+    }
 }

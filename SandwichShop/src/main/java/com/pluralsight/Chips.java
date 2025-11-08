@@ -29,4 +29,9 @@ public class Chips extends ProdcutOrder {
     public double calculatePrice() {
         return 1.50;
     }
+
+    @Override
+    public String toString() {
+        return flavor + " Chips" + String.format(" | $%.2f", calculatePrice());
+    }
 }

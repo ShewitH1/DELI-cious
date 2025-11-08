@@ -24,19 +24,19 @@ public class OrderMenu {
                     case 1:
                         //Add Sandwich
                         System.out.println();
-                        AddSandwich.sandwich_screen();
+//                        AddSandwich.sandwich_screen();
                         break;
 
                     case 2:
                         //Add Drink
                         System.out.println();
-                        AddDrink.drink_screen();
+//                        AddDrink.drink_screen();
                         break;
 
                     case 3:
                         //Add Chips
                         System.out.println();
-                        AddChips.chips_screen();
+//                        AddChips.chips_screen();
                         break;
 
                     case 4:
@@ -57,12 +57,12 @@ public class OrderMenu {
         }
 
         //Adding Sandwich method
-        public void addSandwich(){
+        private static void HandleAddSandwich(){
 
         }
 
         //Adding Drink method
-        public void addDrink(){
+        private static void addDrink(){
 
         }
 
