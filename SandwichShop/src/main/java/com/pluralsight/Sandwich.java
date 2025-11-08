@@ -20,24 +20,6 @@ public class Sandwich extends ProdcutOrder{
         this.setPrice(calculatePrice());
     }
 
-//    @Override
-//    public double calculatePrice() {
-//        double basePrice = switch (length) {
-//            case 4 -> 5.50;
-//            case 8 -> 7.00;
-//            case 12 -> 8.50;
-//            default -> 0.0;
-//        };
-//
-//        for(Topping topping : toppings){
-//            basePrice += topping.getPriceForSize(length);
-//
-//        }
-//
-//        //set the compound price on object
-//        this.setPrice(basePrice);
-//        return basePrice;
-//    }
 
     private double basePriceBySize(int len) {
         return switch (len) {
@@ -104,22 +86,6 @@ public class Sandwich extends ProdcutOrder{
         return total;
     }
 
-
-//    private double calculate_size_price(int length){
-//        if(length == 4){
-//            return 5.50;
-//        }
-//        else if ( length == 8) {
-//            return 7.00;
-//        }
-//        else if(length == 12){
-//            return 8.50;
-//        }
-//        else{
-//            return 0.0;
-//        }
-//    }
-
     public void addTopping(Topping topping){
         toppings.add(topping);
     }
@@ -155,3 +121,39 @@ public class Sandwich extends ProdcutOrder{
         return length + " inch " + bread + " sandwich" + (toasted ? " (toasted)" : "");
     }
 }
+
+
+
+//    private double calculate_size_price(int length){
+//        if(length == 4){
+//            return 5.50;
+//        }
+//        else if ( length == 8) {
+//            return 7.00;
+//        }
+//        else if(length == 12){
+//            return 8.50;
+//        }
+//        else{
+//            return 0.0;
+//        }
+//    }
+
+//    @Override
+//    public double calculatePrice() {
+//        double basePrice = switch (length) {
+//            case 4 -> 5.50;
+//            case 8 -> 7.00;
+//            case 12 -> 8.50;
+//            default -> 0.0;
+//        };
+//
+//        for(Topping topping : toppings){
+//            basePrice += topping.getPriceForSize(length);
+//
+//        }
+//
+//        //set the compound price on object
+//        this.setPrice(basePrice);
+//        return basePrice;
+//    }
