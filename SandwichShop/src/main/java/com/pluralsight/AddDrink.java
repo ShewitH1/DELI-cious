@@ -1,7 +1,11 @@
 package com.pluralsight;
 
 public class AddDrink {
-    public static void drink_screen(){
+    //make sure I add empty data
+    String size = " ";
+    String flavor = " ";
+
+    public static Drink drink_screen(){
         String drink_screen_option = """
                 *-------- DELICIOUS sandwiches --------*
                 -------------Add Drink Menu-------------
@@ -22,7 +26,11 @@ public class AddDrink {
 
             switch (command) {
                 case 1:
+
+                    break;
                 case 2:
+
+                    break;
                 case 3:
                     // Set Drink Size
                     break;
@@ -32,14 +40,38 @@ public class AddDrink {
                 case 5:
                     // Confirm Drink
                     System.out.println("Drink added successfully!");
-                    return;
+                    break;
                 case 0:
                     System.out.println("Returning to Order Screen...");
-                    return;
+                    break;
                 default:
                     System.out.println("Invalid choice. Try again.");
                     break;
             }
         }
+        return null;
     }
+
+    //Add helper methods
+    private static String processSelectSize(){
+
+        return null;
+    }
+
+    private static String processSelectFlavor(){
+
+        return null;
+    }
+
+    private static Drink processConfirmDrink(){
+
+        return null;
+    }
+
+    private static void processCancel(){
+
+
+    }
+
+
 }
