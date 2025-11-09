@@ -4,7 +4,7 @@ public class Drink extends ProdcutOrder{
     private String size;
     private String flavor;
 
-    public Drink(String name, double price, String size, String flavor) {
+    public Drink(String name, String size, String flavor) {
 //        super(name, price);
         super(name);
         this.size = size;

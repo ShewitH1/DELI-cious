@@ -1,8 +1,22 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+
 public class AddSandwich {
 
-    public static void sandwich_screen(){
+    public static Sandwich sandwich_screen(){
+        //empty - default data
+        String bred = " ";
+        int length = 0;
+        boolean toasted = false;
+
+        //add arraylists here
+        ArrayList<Topping> toppings = new ArrayList<>();
+        ArrayList<Topping> sauces = new ArrayList<>();
+
+        //empty - null sandwich object
+        Sandwich sandwich = null;
+
         String sandwich_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
                 -----------Add Sandwich Menu------------
@@ -41,15 +55,44 @@ public class AddSandwich {
                 case 6:
                     // Confirm Sandwich
                     System.out.println("Sandwich added successfully!");
-                    return;
+                    break;
                 case 0:
                     System.out.println("Returning to Order Screen...");
-                    return;
+                    break;
                 default:
                     System.out.println("Invalid choice. Try again.");
                     break;
             }
         }
+        return sandwich;
+    }
+
+    private static String selectBread(){
+
+        return null;
+    }
+
+    private static int selectSize(){
+
+        return 0;
+    }
+
+    private static void addToppings(ArrayList<Topping> toppings){
 
     }
+
+    private static void addSauces(ArrayList<Topping> sauces){
+
+    }
+
+    private static boolean toastedOption(){
+
+        return true;
+    }
+
+    private static Sandwich confirmSandwich(){
+        return null;
+    }
+
 }
+

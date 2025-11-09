@@ -1,11 +1,12 @@
 package com.pluralsight;
 
 public class AddDrink {
-    //make sure I add empty data
-    String size = " ";
-    String flavor = " ";
-
     public static Drink drink_screen(){
+
+        //make sure I add empty data
+        String size = " ";
+        String flavor = " ";
+
         String drink_screen_option = """
                 *-------- DELICIOUS sandwiches --------*
                 -------------Add Drink Menu-------------
@@ -26,23 +27,32 @@ public class AddDrink {
 
             switch (command) {
                 case 1:
+                    //size for small
+                    size = processSelectSize("small");
 
                     break;
                 case 2:
+                    //size for medium
+                    size = processSelectSize("medium");
 
                     break;
                 case 3:
-                    // Set Drink Size
+                    //size for large
+                    size = processSelectSize("large");
                     break;
                 case 4:
                     // Choose Drink Flavor
+                    flavor = processSelectFlavor();
                     break;
                 case 5:
                     // Confirm Drink
-                    System.out.println("Drink added successfully!");
+                    Drink drink = processConfirmDrink(size, flavor);
+                    if(drink != null){
+                        return drink;
+                    }
                     break;
                 case 0:
-                    System.out.println("Returning to Order Screen...");
+                    processCancel();
                     break;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -53,25 +63,30 @@ public class AddDrink {
     }
 
     //Add helper methods
-    private static String processSelectSize(){
+    private static String processSelectSize(String sizeChoice){
+        System.out.println("Size selected: " + sizeChoice);
 
-        return null;
+        return sizeChoice;
     }
 
     private static String processSelectFlavor(){
-
-        return null;
+        String flavor = ConsoleHelper.promptForString("Enter drink flavor");
+        System.out.println("Flavor selected: " + flavor);
+        return flavor;
     }
 
-    private static Drink processConfirmDrink(){
-
-        return null;
+    private static Drink processConfirmDrink(String size, String flavor){
+        if (size.isEmpty() || flavor.isEmpty()) {
+            System.out.println("Please select both size and flavor before confirming!");
+            return null;
+        }
+        Drink drink = new Drink("Drink", size, flavor);
+        System.out.println("Drink added: " + drink);
+        return drink;
     }
 
     private static void processCancel(){
-
+        System.out.println("Returning to Order Screen...");
 
     }
-
-
 }
