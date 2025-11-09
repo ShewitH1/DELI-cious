@@ -1,7 +1,12 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
+
 public class OrderMenu {
+
+    private static Order current_order = new Order();
     public static void Order_Screen(){
+
         String Order_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
                 -----------Order Screen Menu-----------
@@ -24,28 +29,29 @@ public class OrderMenu {
                     case 1:
                         //Add Sandwich
                         System.out.println();
-//                        AddSandwich.sandwich_screen();
+                        AddSandwich();
                         break;
-
                     case 2:
                         //Add Drink
                         System.out.println();
-//                        AddDrink.drink_screen();
-                        break;
+                        addDrink();
 
+                        break;
                     case 3:
                         //Add Chips
                         System.out.println();
-//                        AddChips.chips_screen();
+                        addChips();
                         break;
 
                     case 4:
                         //Checkout
-
+                        checkout();
                         break;
                     case 0:
                         System.out.println("Cancel Order...");
                         System.exit(0);
+
+                        //not sure to make method for this or not
                         break;
 
                     default:
@@ -57,22 +63,55 @@ public class OrderMenu {
         }
 
         //Adding Sandwich method
-        private static void HandleAddSandwich(){
-
+        private static void AddSandwich(){
+            Sandwich sandwich = AddSandwich.sandwich_screen();
+            if(sandwich != null){
+                current_order.addProduct(sandwich);
+            }
         }
 
         //Adding Drink method
         private static void addDrink(){
+            Drink drink = AddDrink.drink_screen();
+            if(drink != null){
+                current_order.addProduct(drink);
+            }
 
         }
 
         //Adding Chips method
-        public void addChips(){
+        public static void addChips(){
+            Chips chips = AddChips.chips_screen();
+            if(chips != null){
+                current_order.addProduct(chips);
+            }
 
         }
 
         //Checkout method
-        public void checkout(){
+        public static void checkout(){
+            if(current_order.isEmpty()){
+                System.out.println("Your order is empty! Please add items before checkout!");
+            }
+
+            System.out.println("\n ------Summary of Order-------");
+            current_order.printReceipt();
+            System.out.println("Total: $" + String.format("%.2f", current_order.getTotal()));
+
+
+            String confirm = ConsoleHelper.promptForString("Confirm checkout? (y/n)");
+            if (confirm.equalsIgnoreCase("y")) {
+                System.out.println("Order confirmed!");
+                current_order = new Order(); // reset
+            } else {
+                System.out.println("Returning to Order Menu.");
+            }
+
+
+        }
+
+        //not sure if i want to make a method for this functionality
+        public static void cancelOrder(){
 
         }
     }
