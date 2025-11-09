@@ -68,16 +68,26 @@ public class AddSandwich {
     }
 
     private static String selectBread(){
+        String bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
+        System.out.println("Bread selected: " + bread);
 
-        return null;
+        return bread;
     }
 
     private static int selectSize(){
-
-        return 0;
+        int size = ConsoleHelper.promptForInt("Choose sandwich size (4, 8, or 12 inches)");
+        if (size != 4 && size != 8 && size != 12) {
+            System.out.println("Invalid size. Please choose 4, 8, or 12.");
+            return 0;
+        }
+        System.out.println("Size selected: " + size + " inch");
+        return size;
     }
 
     private static void addToppings(ArrayList<Topping> toppings){
+        System.out.println("\n Meats: steak, ham, salami, roast beef, chicken, bacon");
+        System.out.println("Cheeses: american, provolone, cheddar, swiss");
+        System.out.println("Regular: lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, mushrooms, guacamole\n");
 
     }
 
