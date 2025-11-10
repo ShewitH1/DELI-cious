@@ -62,7 +62,7 @@ public class AddDrink {
         return null;
     }
 
-    //Add helper methods
+    //I added helper methods here
     private static String processSelectSize(String sizeChoice){
         System.out.println("Size selected: " + sizeChoice);
 
