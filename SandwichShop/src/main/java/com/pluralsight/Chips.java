@@ -30,8 +30,17 @@ public class Chips extends ProdcutOrder {
         return 1.50;
     }
 
+//    @Override
+//    public String toString() {
+//        return flavor + " Chips" + String.format(" | $%.2f", calculatePrice());
+//    }
+
     @Override
     public String toString() {
-        return flavor + " Chips" + String.format(" | $%.2f", calculatePrice());
+        if (getDescription() == null || getDescription().trim().isEmpty()) {
+            return "Invalid chips: missing flavor. Please select before confirming.";
+        }
+
+        return getDescription() + String.format(" | $%.2f", calculatePrice());
     }
 }

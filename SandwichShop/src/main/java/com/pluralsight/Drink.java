@@ -56,6 +56,11 @@ public class Drink extends ProdcutOrder{
 
     @Override
     public String toString() {
+        if (getDescription() == null || getDescription().trim().isEmpty() || calculatePrice() == 0.0) {
+            return "Invalid drink: missing size or flavor. Please select both before confirming.";
+        }
+
         return getDescription() + String.format(" | $%.2f", calculatePrice());
     }
+
 }

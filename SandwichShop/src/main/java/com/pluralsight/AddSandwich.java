@@ -1,11 +1,12 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AddSandwich {
 
     public static Sandwich sandwich_screen(){
-        //empty - default data
+        //make sure I add initializing - default data - reservation
         String bread = " ";
         int length = 0;
         boolean toasted = false;
@@ -63,7 +64,6 @@ public class AddSandwich {
                     if (sandwich != null){
                         return  sandwich;
                     }
-                    System.out.println("Sandwich added successfully!");
                     break;
                 case 0:
                     System.out.println("Returning to Order Screen...");
@@ -76,35 +76,102 @@ public class AddSandwich {
         return sandwich;
     }
 
+    //corrected the user errors here
     private static String selectBread(){
-        String bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
-        System.out.println("Bread selected: " + bread);
+//        String bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
+//        System.out.println("Bread selected: " + bread);
+//
+//        return bread;
 
-        return bread;
+        String bread;
+        while(true){
+            bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
+
+            if (bread.equalsIgnoreCase("white") || bread.equalsIgnoreCase("wheat") || bread.equalsIgnoreCase("rye") || bread.equalsIgnoreCase("wrap")){
+                System.out.println("Bread Selected: " + bread);
+                return bread;
+            }
+            else {
+                System.out.println("Invalid choice. Please choose from White, Wheat, Rye, or Wrap.");
+            }
+        }
     }
 
+    //corrected the user errors here
     private static int selectSize(){
-        int size = ConsoleHelper.promptForInt("Choose sandwich size (4, 8, or 12 inches)");
-        if (size != 4 && size != 8 && size != 12) {
-            System.out.println("Invalid size. Please choose 4, 8, or 12.");
-            return 0;
+//        int size = ConsoleHelper.promptForInt("Choose sandwich size (4, 8, or 12 inches)");
+//        if (size != 4 && size != 8 && size != 12) {
+//            System.out.println("Invalid size. Please choose 4, 8, or 12.");
+//            return selectSize(); //ask professor about this
+//        }
+//        System.out.println("Size selected: " + size + " inch");
+//        return size;
+
+        int size;
+
+        while(true) {
+            size = ConsoleHelper.promptForInt("Choose sandwich size (4, 8, or 12 inches)");
+
+            if (size == 4 || size == 8 || size == 12) {
+                System.out.println("Size selcted: " + size + " inch");
+                return size;
+            } else {
+                System.out.println("Invalid size. Please choose 4, 8, or 12.");
+            }
         }
-        System.out.println("Size selected: " + size + " inch");
-        return size;
     }
 
     private static void addToppings(ArrayList<Topping> toppings){
-        System.out.println("\n Meats: steak, ham, salami, roast beef, chicken, bacon");
-        System.out.println("Cheeses: american, provolone, cheddar, swiss");
-        System.out.println("Regular: lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, mushrooms, guacamole\n");
+//        System.out.println("Meats: steak, ham, salami, roast beef, chicken, bacon");
+//        System.out.println("Cheeses: american, provolone, cheddar, swiss");
+//        System.out.println("Regular: lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, mushrooms, guacamole\n");
+//
+//        while(true){
+//            String toppingName = ConsoleHelper.promptForString("Enter topping (or 'done' to finish)");
+//            if (toppingName.equalsIgnoreCase("done")) {
+//                break;
+//            }
+//
+//            String category = ConsoleHelper.promptForString("Enter category (meat / cheese / regular)").toLowerCase();
+//            int extra = 0;
+//            if (category.equals("meat") || category.equals("cheese")) {
+//                extra = ConsoleHelper.promptForInt("Extra portions? (0 for none)");
+//            }
+//
+//            Topping topping = new Topping(toppingName, category, extra);
+//            toppings.add(topping);
+//            System.out.println("Added: " + toppingName + " (" + category + ")");
+//        }
 
-        while(true){
-            String toppingName = ConsoleHelper.promptForString("Enter topping (or 'done' to finish)");
-            if (toppingName.equalsIgnoreCase("done")) {
+        String[] meats = {"steak", "ham", "salami", "roast beef", "chicken", "bacon"};
+        String[] cheeses = {"american", "provolone", "cheddar", "swiss"};
+        String[] regulars = {"lettuce", "peppers", "onions", "tomatoes", "jalapeños", "cucumbers", "pickles", "mushrooms", "guacamole"};
+
+        System.out.println("Available toppings:");
+        System.out.println("Meats: " + String.join(", ", meats));
+        System.out.println("Cheeses: " + String.join(", ", cheeses));
+        System.out.println("Regular: " + String.join(", ", regulars));
+        System.out.println();
+
+        while (true) {
+            String toppingName = ConsoleHelper.promptForString("Enter topping (or 'done' to finish)").toLowerCase();
+            if (toppingName.equals("done")) {
                 break;
             }
 
-            String category = ConsoleHelper.promptForString("Enter category (meat / cheese / regular)").toLowerCase();
+            // Check which category it belongs to
+            String category = null;
+            if (Arrays.asList(meats).contains(toppingName)) {
+                category = "meat";
+            } else if (Arrays.asList(cheeses).contains(toppingName)) {
+                category = "cheese";
+            } else if (Arrays.asList(regulars).contains(toppingName)) {
+                category = "regular";
+            } else {
+                System.out.println("Invalid topping. Please choose from the available list.");
+                continue; // ask again
+            }
+
             int extra = 0;
             if (category.equals("meat") || category.equals("cheese")) {
                 extra = ConsoleHelper.promptForInt("Extra portions? (0 for none)");
@@ -112,35 +179,60 @@ public class AddSandwich {
 
             Topping topping = new Topping(toppingName, category, extra);
             toppings.add(topping);
-            System.out.println("Added: " + toppingName + " (" + category + ")");
+            //ask matt to see if I can use instance of to distinguish extra for meats and toppings
+            System.out.println("Added: " + toppingName + " (" + category + ")" + " - " + "Extra Portions" + " (" + extra + ")");
         }
     }
 
     private static void addSauces(ArrayList<Topping> sauces){
-        System.out.println("\n Sauces: mayo, mustard, ketchup, ranch, thousand island, vinaigrette\n");
+//        System.out.println("Sauces: mayo, mustard, ketchup, ranch, thousand island, vinaigrette\n");
+//
+//        while(true){
+//            String sauce = ConsoleHelper.promptForString("Enter sauce (or 'done' to finish ");
+//
+//            if (sauce.equalsIgnoreCase("done")){
+//                break;
+//            }
+//            Topping sauce_item = new Topping(sauce, "sauce");
+//            sauces.add(sauce_item);
+//
+//            System.out.println("Added sauce: " + sauce);
+//
+//        }
+
+        String[] sauce = {"mayo", "mustard", "ketchup", "ranch", "thousand island", "vinaigrette"};
+
+        System.out.println("Available Sauces");
+        System.out.println("Sauces: " + String.join(", ", sauce));
 
         while(true){
-            String sauce = ConsoleHelper.promptForString("Enter sauce (or 'done' to finish ");
-
-            if (sauce.equalsIgnoreCase("done")){
+            String sauce_name = ConsoleHelper.promptForString("Enter sauce (or 'done' to finish");
+            if(sauce_name.equalsIgnoreCase("done")){
                 break;
             }
-            Topping sauce_item = new Topping(sauce, "sauce");
-            sauces.add(sauce_item);
 
-            System.out.println("Added sauce: " + sauce);
-
+            if(Arrays.asList(sauce).contains(sauce_name)){
+                System.out.println("Added sauce: " + sauce_name);
+            }
+            else{
+                System.out.println("Invalid sauce. Please choose from the list above.");
+            }
         }
     }
 
     private static boolean toastedOption(){
-        String input = ConsoleHelper.promptForString("Toasted? (y/n)");
-        boolean toasted = input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
-        System.out.println("Sandwich will be " + (toasted ? "toasted." : "untoasted."));
+//        String input = ConsoleHelper.promptForString("Toasted? (y/n)");
+//        boolean toasted = input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
+//        System.out.println("Sandwich will be " + (toasted ? "toasted." : "untoasted."));
+//
+//        return toasted;
 
+        boolean toasted = ConsoleHelper.promptForYesNo("Toasted?");
+        System.out.println("Sandwich will be " + (toasted ? "toasted." : "untoasted."));
         return toasted;
     }
 
+    //add the toppics here
     private static Sandwich confirmSandwich(String bread, int size, boolean toasted, ArrayList<Topping> toppings,
                                             ArrayList<Topping> sauces){
         if (bread.isEmpty() || size == 0){
@@ -159,6 +251,8 @@ public class AddSandwich {
         System.out.println("\n--- Confirm Sandwich ---");
         System.out.println("Bread: " + bread);
         System.out.println("Size: " + size + " inch");
+        //add toppings print line as well
+        System.out.println("Toppings: " + toppings);
         System.out.println("Toasted: " + (toasted ? "Yes" : "No"));
         System.out.println("Price: $" + String.format("%.2f", sandwich.calculatePrice()));
 

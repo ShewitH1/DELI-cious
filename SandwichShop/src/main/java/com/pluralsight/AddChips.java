@@ -2,7 +2,7 @@ package com.pluralsight;
 
 public class AddChips {
     public static Chips chips_screen(){
-        //empty flavor
+        //make sure I add initializing  data - reservation
         String flavor = " ";
 
 //        Chips chips = null;
@@ -64,16 +64,20 @@ public class AddChips {
         return flavorChoice;
     }
 
-    private static  Chips processConfirmChips(String flavor){
-        if(flavor.isEmpty()){
-            System.out.println("Please select a chip flavor before confirmingQ ");
+    //add error catching with this
+    private static Chips processConfirmChips(String flavor) {
+        if(flavor.trim().isEmpty() || flavor == null){
+            System.out.println("Please select a chip flavor before confirming");
             return null;
         }
 
         //make object
-        Chips chips = new Chips("Chips", 1.50, flavor);
+//        Chips chips = new Chips("Chips", 1.50, flavor);
+        Chips chips = new Chips(flavor + " Chips", 1.50, flavor);
         System.out.println("Chips added: " + chips);
         return chips;
+
+
     }
 
     private static void processCancel(){

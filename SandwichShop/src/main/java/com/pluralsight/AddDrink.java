@@ -3,7 +3,7 @@ package com.pluralsight;
 public class AddDrink {
     public static Drink drink_screen(){
 
-        //make sure I add empty data
+        //make sure I add initializing  data - reservation
         String size = " ";
         String flavor = " ";
 
@@ -69,6 +69,7 @@ public class AddDrink {
         return sizeChoice;
     }
 
+    //add actual soda options
     private static String processSelectFlavor(){
         String flavor = ConsoleHelper.promptForString("Enter drink flavor");
         System.out.println("Flavor selected: " + flavor);
@@ -81,7 +82,8 @@ public class AddDrink {
             return null;
         }
         Drink drink = new Drink("Drink", size, flavor);
-        System.out.println("Drink added: " + drink);
+//        System.out.println("Drink added: " + drink);
+        System.out.println(drink);
         return drink;
     }
 

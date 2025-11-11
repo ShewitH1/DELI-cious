@@ -9,7 +9,7 @@ public class UserInterface {
                  *-------- DELICIOUS sandwiches --------*
                     -----------------Home-------------------
                      ~ Enter                              -
-                      1 ) New Order                       -
+                      1 ) New Order
                       0 ) To exit                         -
                      ---------------------------------------
                  """;
