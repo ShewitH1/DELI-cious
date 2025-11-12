@@ -53,7 +53,20 @@ public class Order {
                 }
                 receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
             }
+        }// for the drinks
+        boolean hasDrinks = false;
+        for (ProdcutOrder p : products) {
+            if (p instanceof Drink) {
+                if (!hasDrinks) {
+                    receipt.append("\nDrinks:\n");
+                    receipt.append("-----------------------------------------------------------\n");
+                    hasDrinks = true;
+                }
+                receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
+            }
         }
+
+
 
 
 
