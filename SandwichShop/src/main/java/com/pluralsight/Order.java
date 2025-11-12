@@ -33,7 +33,7 @@ public class Order {
         return total;
     }
 
-    //Generate receipt text (like Matt’s example)
+    //generate receipt text
     public String getReceiptContent() {
         StringBuilder receipt = new StringBuilder("🧾━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━🧾\n");
         receipt.append("Date: ").append(orderTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))).append("\n\n");
@@ -81,12 +81,12 @@ public class Order {
         return receipt.toString();
     }
 
-    //Print receipt to console
+    //This will print receipt to console
     public void printReceipt() {
         System.out.println(getReceiptContent());
     }
 
-    //Getters
+
     public ArrayList<ProdcutOrder> getProducts() {
         return products;
     }
