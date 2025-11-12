@@ -14,7 +14,7 @@ public class OrderMenu {
                  1 ) Add Sandwich                    -
                  2 ) Add Drink                       -
                  3 ) Add Chips                       -
-                 4) Add Custom Sandwich              -
+                 4 ) Add Custom Sandwich             -
                  5 ) Checkout                        -
                  0 ) Cancel Order                    -
                 ---------------------------------------
@@ -46,7 +46,7 @@ public class OrderMenu {
 
                     case 4:
                         //custom sandwich
-
+                        custom_sandwich();
                         break;
 
                     case 5:
@@ -91,7 +91,7 @@ public class OrderMenu {
 
             if(sandwich != null){
                 current_order.addProduct(sandwich);
-                System.out.println(sandwich.getDescription() + "added!");
+                System.out.println(sandwich.custom_des() + " added!");
             }
         }
 

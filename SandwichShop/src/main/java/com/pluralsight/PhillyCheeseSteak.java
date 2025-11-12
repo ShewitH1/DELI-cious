@@ -29,7 +29,6 @@ public class PhillyCheeseSteak extends SignatureSandwich{
         return "Philly Cheese Steak";
     }
 
-    //ask matt about calculate price
 
 
 

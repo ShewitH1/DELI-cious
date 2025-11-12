@@ -89,6 +89,9 @@ public class AddSandwich {
         while(true){
             bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
 
+            //String[] breadOptions = { "one", "two", "three"};
+           // String finalBread = bread;
+           // boolean isBreadInBreadOptions =  Arrays.stream(breadOptions).anyMatch(option -> option.equalsIgnoreCase(finalBread));
             if (bread.equalsIgnoreCase("white") || bread.equalsIgnoreCase("wheat") || bread.equalsIgnoreCase("rye") || bread.equalsIgnoreCase("wrap")){
                 System.out.println("Bread Selected: " + bread);
                 return bread;

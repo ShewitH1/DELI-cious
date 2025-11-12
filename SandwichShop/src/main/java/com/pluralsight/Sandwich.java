@@ -3,11 +3,11 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sandwich extends ProdcutOrder{
+public class Sandwich extends ProdcutOrder {
     private String bread;
     private int length;
     private boolean toasted;
-//    private double pricee;
+    //    private double pricee;
     private List<Topping> toppings = new ArrayList<>();
 
 
@@ -23,18 +23,22 @@ public class Sandwich extends ProdcutOrder{
     @Override
     public double getPrice() {
         double total = basePriceBySize(length);
-        for(Topping t : toppings){
+        for (Topping t : toppings) {
             total += t.getPriceForSize(length);
         }
         return total;
     }
 
-    private double basePriceBySize(int size){
-        switch (size){
-            case 4: return 5.50;
-            case 8: return 7.00;
-            case 12: return 8.50;
-            default: return 0.0;
+    private double basePriceBySize(int size) {
+        switch (size) {
+            case 4:
+                return 5.50;
+            case 8:
+                return 7.00;
+            case 12:
+                return 8.50;
+            default:
+                return 0.0;
         }
     }
 
@@ -46,7 +50,7 @@ public class Sandwich extends ProdcutOrder{
         this.toppings = toppings;
     }
 
-    public void addTopping(Topping topping){
+    public void addTopping(Topping topping) {
         toppings.add(topping);
     }
 
@@ -77,12 +81,28 @@ public class Sandwich extends ProdcutOrder{
     }
 
 
+    //description for custom sandwich
+    public String custom_des() {
+        String toppingsList = "";
+
+        for (Topping topping : getToppings()) {
+            if (!toppingsList.isEmpty()) {
+                toppingsList += ", ";
+            }
+            toppingsList += topping.getName();
+        }
+
+        String toastedText = isToasted() ? ", toasted" : "";
+
+        return " (" + getLength() + " inch, " + getBread() + toastedText + ") [" +
+                toppingsList + "] | $" + String.format("%.2f", getPrice());
+    }
+
     //should i add toppings here instead of confirm-sandwich method in addSandwich class
     @Override
     public String getDescription() {
         return length + " inch " + bread + " sandwich" + (toasted ? " (toasted)" : "");
     }
-
 
     @Override
     public String toString() {

@@ -1,0 +1,16 @@
+
+=================  DELICIOUS SANDWICHES  =================
+Date: Nov 12, 2025  12:39 PM
+-----------------------------------------------------------
+Sandwiches:
+-----------------------------------------------------------
+  8 inch white sandwich (toasted)     $10.50
+   Toppings: Steak, American, Peppers, Mayo
+  8 inch white sandwich (toasted)     $10.50
+   Toppings: Bacon, Cheddar, Lettuce, Tomato, Ranch
+-----------------------------------------------------------
+Total:                                   $21.00
+-----------------------------------------------------------
+Thank you for visiting Delicious Sandwiches!
+We appreciate your business — come back soon!
+===========================================================

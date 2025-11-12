@@ -13,8 +13,8 @@ public class Order {
     private static int orderCounter = 0;
 
     public Order() {
-        this.orderTime = LocalDateTime.now();
         orderCounter++;
+        this.orderTime = LocalDateTime.now();
         // Create folder name and timestamped filename
         this.receiptFileName = "receipts/" + orderTime.format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-")) + orderCounter + ".txt";
     }
@@ -52,6 +52,18 @@ public class Order {
                     hasSandwiches = true;
                 }
                 receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
+
+                //this is for toppings
+                Sandwich s = (Sandwich) p;
+                if (!s.getToppings().isEmpty()) {
+                    receipt.append("   Toppings: ");
+                    for (Topping t : s.getToppings()) {
+                        receipt.append(t.getName()).append(", ");
+                    }
+                    // remove last comma and space
+                    receipt.setLength(receipt.length() - 2);
+                    receipt.append("\n");
+                }
             }
         }// for the drinks
         boolean hasDrinks = false;
