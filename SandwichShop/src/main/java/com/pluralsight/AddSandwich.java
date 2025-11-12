@@ -76,13 +76,15 @@ public class AddSandwich {
         return sandwich;
     }
 
-    //corrected the user errors here
+    //corrected the user errors here -     //good to go
     private static String selectBread(){
 //        String bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
 //        System.out.println("Bread selected: " + bread);
 //
 //        return bread;
 
+        //ask should i add it into array or not
+        //made a loop instead - teacher recommendation
         String bread;
         while(true){
             bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
@@ -97,7 +99,7 @@ public class AddSandwich {
         }
     }
 
-    //corrected the user errors here
+    //corrected the user errors here -    good to go
     private static int selectSize(){
 //        int size = ConsoleHelper.promptForInt("Choose sandwich size (4, 8, or 12 inches)");
 //        if (size != 4 && size != 8 && size != 12) {
@@ -107,6 +109,7 @@ public class AddSandwich {
 //        System.out.println("Size selected: " + size + " inch");
 //        return size;
 
+        //made a loop instead - teacher recommendation
         int size;
 
         while(true) {
@@ -121,6 +124,7 @@ public class AddSandwich {
         }
     }
 
+    //good to go
     private static void addToppings(ArrayList<Topping> toppings){
 //        System.out.println("Meats: steak, ham, salami, roast beef, chicken, bacon");
 //        System.out.println("Cheeses: american, provolone, cheddar, swiss");
@@ -143,6 +147,7 @@ public class AddSandwich {
 //            System.out.println("Added: " + toppingName + " (" + category + ")");
 //        }
 
+        //added arrays instead - similar functionality
         String[] meats = {"steak", "ham", "salami", "roast beef", "chicken", "bacon"};
         String[] cheeses = {"american", "provolone", "cheddar", "swiss"};
         String[] regulars = {"lettuce", "peppers", "onions", "tomatoes", "jalapeños", "cucumbers", "pickles", "mushrooms", "guacamole"};
@@ -184,6 +189,7 @@ public class AddSandwich {
         }
     }
 
+    //good to go
     private static void addSauces(ArrayList<Topping> sauces){
 //        System.out.println("Sauces: mayo, mustard, ketchup, ranch, thousand island, vinaigrette\n");
 //
@@ -220,6 +226,8 @@ public class AddSandwich {
         }
     }
 
+
+    //added consoler helper Y/N prompt with loop in console file - good to go
     private static boolean toastedOption(){
 //        String input = ConsoleHelper.promptForString("Toasted? (y/n)");
 //        boolean toasted = input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
@@ -254,7 +262,7 @@ public class AddSandwich {
         //add toppings print line as well
         System.out.println("Toppings: " + toppings);
         System.out.println("Toasted: " + (toasted ? "Yes" : "No"));
-        System.out.println("Price: $" + String.format("%.2f", sandwich.calculatePrice()));
+        System.out.println("Price: $" + String.format("%.2f", sandwich.getPrice()));
 
         String confirm = ConsoleHelper.promptForString("Confirm sandwich? (y/n)");
         if (confirm.equalsIgnoreCase("y")) {

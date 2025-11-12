@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Arrays;
+
 public class AddDrink {
     public static Drink drink_screen(){
 
@@ -50,7 +52,9 @@ public class AddDrink {
                     if(drink != null){
                         return drink;
                     }
-                    break;
+                    else{
+                        break;
+                    }
                 case 0:
                     processCancel();
                     break;
@@ -71,13 +75,40 @@ public class AddDrink {
 
     //add actual soda options
     private static String processSelectFlavor(){
-        String flavor = ConsoleHelper.promptForString("Enter drink flavor");
-        System.out.println("Flavor selected: " + flavor);
-        return flavor;
+//        String flavor = ConsoleHelper.promptForString("Enter drink flavor");
+//        System.out.println("Flavor selected: " + flavor);
+//        return flavor;
+
+        String[] flavors = {"coke", "sprite", "root beer", "dr pepper", "lemonade", "water"};
+
+        System.out.println("Available Drink Flavors: ");
+        for(int i = 0; i<flavors.length; i++){
+            System.out.println(" - " + flavors[i]);
+        }
+
+        String flavor = " ";
+
+        while(true){
+            flavor = ConsoleHelper.promptForString("Enter drink flavor (or 'cancel' to go back)").toLowerCase();
+
+            if(flavor.equals("cancel")){
+                System.out.println("Returning to Add Drink Menu...");
+                return "";
+            }
+
+            if(Arrays.asList(flavors).contains(flavor)){
+                System.out.println("Flavor selected: " + flavor);
+                return flavor;
+            }
+            else{
+                System.out.println("Invalid flavor. Please choose from the list above.");
+            }
+        }
+
     }
 
     private static Drink processConfirmDrink(String size, String flavor){
-        if (size.isEmpty() || flavor.isEmpty()) {
+        if (size == null || size.trim().isEmpty() || flavor == null || flavor.trim().isEmpty()) {
             System.out.println("Please select both size and flavor before confirming!");
             return null;
         }

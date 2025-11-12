@@ -14,7 +14,7 @@ public class Order {
         double total = 0.0;
         for (ProdcutOrder p : products) {
 //            total += p.getPrice();
-            total += p.calculatePrice();
+            total += p.getPrice();
         }
         return total;
     }
@@ -44,7 +44,7 @@ public class Order {
 
 // matt's version...
         for(ProdcutOrder p : products){
-            System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
+            System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.getPrice()) + ")");
         }
 
         System.out.println("Total: $" + String.format("%.2f", getTotal()));

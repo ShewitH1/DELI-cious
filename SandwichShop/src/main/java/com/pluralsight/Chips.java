@@ -7,7 +7,7 @@ public class Chips extends ProdcutOrder {
 //        super(name, price);
         super(name);
         this.flavor = flavor;
-        this.setPrice(calculatePrice());
+//        this.setPrice(calculatePrice());
     }
 
     public String getFlavor() {
@@ -26,7 +26,7 @@ public class Chips extends ProdcutOrder {
 
     //chips price is always 1.50
     @Override
-    public double calculatePrice() {
+    public double getPrice() {
         return 1.50;
     }
 
@@ -41,6 +41,6 @@ public class Chips extends ProdcutOrder {
             return "Invalid chips: missing flavor. Please select before confirming.";
         }
 
-        return getDescription() + String.format(" | $%.2f", calculatePrice());
+        return getDescription() + String.format(" | $%.2f", getPrice());
     }
 }

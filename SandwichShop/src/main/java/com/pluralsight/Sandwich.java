@@ -16,12 +16,12 @@ public class Sandwich extends ProdcutOrder{
         this.bread = bread;
         this.length = length;
         this.toasted = toasted;
-        this.setPrice(calculatePrice());
+//        this.setPrice(calculatePrice());
     }
 
 
     @Override
-    public double calculatePrice() {
+    public double getPrice() {
         double total = basePriceBySize(length);
         for(Topping t : toppings){
             total += t.getPriceForSize(length);
@@ -70,6 +70,8 @@ public class Sandwich extends ProdcutOrder{
         this.toasted = toasted;
     }
 
+
+    //should i add toppings here instead of confirm-sandwich method in addSandwich class
     @Override
     public String getDescription() {
         return length + " inch " + bread + " sandwich" + (toasted ? " (toasted)" : "");

@@ -2,11 +2,11 @@ package com.pluralsight;
 
 public abstract class ProdcutOrder {
     private String name;
-    private double price;
+//    private double price;  //keep this
 
     public ProdcutOrder(String name) {
         this.name = name;
-//        this.price = price;
+//        this.price = price;  //dont keep this
     }
 
     public String getName() {
@@ -17,17 +17,20 @@ public abstract class ProdcutOrder {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
+//    public double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(double price) {
+//        this.price = price;
+//    }
 
     //Each subclass - Sandwich, Drink, Chips - will override this
     public abstract String getDescription();
 
     //create abstract for calculate
-    public abstract double calculatePrice();
+//    public abstract double calculatePrice();
+
+    public abstract double getPrice();
+
 }

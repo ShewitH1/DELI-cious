@@ -9,7 +9,7 @@ public class Drink extends ProdcutOrder{
         super(name);
         this.size = size;
         this.flavor = flavor;
-        this.setPrice(calculatePrice());  //compute price based on drink size
+//        this.setPrice(getPrice());  //compute price based on drink size
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Drink extends ProdcutOrder{
     }
 
     @Override
-    public double calculatePrice() {
+    public double getPrice() {
         switch (size.toLowerCase()){
             case "small": return 2.00;
             case "medium": return 2.50;
@@ -43,7 +43,7 @@ public class Drink extends ProdcutOrder{
 
     public void setSize(String size) {
         this.size = size;
-        setPrice(calculatePrice());
+//        setPrice(getPrice());
     }
 
     public String getFlavor() {
@@ -56,11 +56,11 @@ public class Drink extends ProdcutOrder{
 
     @Override
     public String toString() {
-        if (getDescription() == null || getDescription().trim().isEmpty() || calculatePrice() == 0.0) {
+        if (getDescription() == null || getDescription().trim().isEmpty() || getPrice() == 0.0) {
             return "Invalid drink: missing size or flavor. Please select both before confirming.";
         }
 
-        return getDescription() + String.format(" | $%.2f", calculatePrice());
+        return getDescription() + String.format(" | $%.2f", getPrice());
     }
 
 }
