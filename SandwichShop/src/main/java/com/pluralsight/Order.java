@@ -33,53 +33,34 @@ public class Order {
         return total;
     }
 
-    //generate receipt text
-    public String getReceiptContent() {
-        StringBuilder receipt = new StringBuilder("🧾━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━🧾\n");
-        receipt.append("Date: ").append(orderTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))).append("\n\n");
 
-        // Sandwiches
+    public String getReceiptContent() {
+        StringBuilder receipt = new StringBuilder();
+
+        // === HEADER ===
+        receipt.append("\n=================  DELICIOUS SANDWICHES  =================\n");
+        receipt.append("Date: ").append(orderTime.format(DateTimeFormatter.ofPattern("MMM dd, yyyy  hh:mm a"))).append("\n");
+        receipt.append("-----------------------------------------------------------\n");
+
+        // for the sandwiches
         boolean hasSandwiches = false;
         for (ProdcutOrder p : products) {
             if (p instanceof Sandwich) {
                 if (!hasSandwiches) {
                     receipt.append("Sandwiches:\n");
+                    receipt.append("-----------------------------------------------------------\n");
                     hasSandwiches = true;
                 }
-                receipt.append("  - ").append(p).append("\n");
+                receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
             }
         }
 
-        // Drinks
-        boolean hasDrinks = false;
-        for (ProdcutOrder p : products) {
-            if (p instanceof Drink) {
-                if (!hasDrinks) {
-                    receipt.append("Drinks:\n");
-                    hasDrinks = true;
-                }
-                receipt.append("  - ").append(p).append("\n");
-            }
-        }
 
-        // Chips
-        boolean hasChips = false;
-        for (ProdcutOrder p : products) {
-            if (p instanceof Chips) {
-                if (!hasChips) {
-                    receipt.append("Chips:\n");
-                    hasChips = true;
-                }
-                receipt.append("  - ").append(p).append("\n");
-            }
-        }
-
-        // Total section
-        receipt.append(String.format("\nTotal: $%.2f\n", getTotal()));
-        receipt.append("🧾━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━🧾\n");
 
         return receipt.toString();
     }
+
+
 
     //This will print receipt to console
     public void printReceipt() {

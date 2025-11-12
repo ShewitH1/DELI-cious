@@ -89,11 +89,10 @@ public class OrderMenu {
         }
 
         //Checkout method
-        public static void checkout(){
-            if(current_order.isEmpty()){
+        public static void checkout() {
+            if (current_order.isEmpty()) {
                 System.out.println("Your order is empty! Please add items before checkout!");
-            }
-//            else{
+            } else {
 //                System.out.println("\n ------Summary of Order-------");
 //                current_order.printReceipt();
 //
@@ -126,6 +125,7 @@ public class OrderMenu {
                     System.out.println("Returning to Order Menu...");
                 }
             }
+        }
 
 //            System.out.println("\n ------Summary of Order-------");
 //            current_order.printReceipt();
