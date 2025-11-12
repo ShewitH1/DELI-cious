@@ -50,8 +50,19 @@ public class Order {
                 receipt.append("  - ").append(p).append("\n");
             }
         }
-    }
 
+        // Drinks
+        boolean hasDrinks = false;
+        for (ProdcutOrder p : products) {
+            if (p instanceof Drink) {
+                if (!hasDrinks) {
+                    receipt.append("Drinks:\n");
+                    hasDrinks = true;
+                }
+                receipt.append("  - ").append(p).append("\n");
+            }
+        }
+    }
 
     //Getters
     public ArrayList<ProdcutOrder> getProducts() {
