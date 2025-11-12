@@ -62,6 +62,29 @@ public class Order {
                 receipt.append("  - ").append(p).append("\n");
             }
         }
+
+        // Chips
+        boolean hasChips = false;
+        for (ProdcutOrder p : products) {
+            if (p instanceof Chips) {
+                if (!hasChips) {
+                    receipt.append("Chips:\n");
+                    hasChips = true;
+                }
+                receipt.append("  - ").append(p).append("\n");
+            }
+        }
+
+        // Total section
+        receipt.append(String.format("\nTotal: $%.2f\n", getTotal()));
+        receipt.append("🧾━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━🧾\n");
+
+        return receipt.toString();
+    }
+
+    //Print receipt to console
+    public void printReceipt() {
+        System.out.println(getReceiptContent());
     }
 
     //Getters
