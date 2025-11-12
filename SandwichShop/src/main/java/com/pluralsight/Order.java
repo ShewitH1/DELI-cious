@@ -66,6 +66,19 @@ public class Order {
             }
         }
 
+        // for the chips
+        boolean hasChips = false;
+        for (ProdcutOrder p : products) {
+            if (p instanceof Chips) {
+                if (!hasChips) {
+                    receipt.append("\nChips:\n");
+                    receipt.append("-----------------------------------------------------------\n");
+                    hasChips = true;
+                }
+                receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
+            }
+        }
+
 
 
 
