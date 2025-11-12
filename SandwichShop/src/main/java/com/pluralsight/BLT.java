@@ -19,7 +19,7 @@ public class BLT extends SignatureSandwich{
         toppings.add(new Topping("Tomato", "regular"));
         toppings.add(new Topping("Ranch", "sauce"));
 
-        //setToppings(toppings)
+        setToppings(toppings);
 
 
     }

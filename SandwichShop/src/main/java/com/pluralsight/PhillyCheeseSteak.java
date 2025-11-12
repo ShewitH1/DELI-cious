@@ -19,7 +19,7 @@ public class PhillyCheeseSteak extends SignatureSandwich{
         toppings.add(new Topping("Mayo", "sauce"));
 
         //ask matt about settoppings
-        //setToppings(toppings)
+        setToppings(toppings);
 
 
     }
@@ -30,4 +30,9 @@ public class PhillyCheeseSteak extends SignatureSandwich{
     }
 
     //ask matt about calculate price
+
+
+
+
+
 }

@@ -38,7 +38,13 @@ public class Sandwich extends ProdcutOrder{
         }
     }
 
+    public List<Topping> getToppings() {
+        return toppings;
+    }
 
+    public void setToppings(List<Topping> toppings) {
+        this.toppings = toppings;
+    }
 
     public void addTopping(Topping topping){
         toppings.add(topping);
