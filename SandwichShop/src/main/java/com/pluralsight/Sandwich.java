@@ -78,6 +78,14 @@ public class Sandwich extends ProdcutOrder{
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "bread='" + bread + '\'' +
+                ", length=" + length +
+                ", toasted=" + toasted +
+                ", toppings=" + toppings +
+                '}';
+    }
 }
 

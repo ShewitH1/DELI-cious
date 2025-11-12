@@ -9,10 +9,10 @@ public class SandwichFileManager {
     public void SaveSandwichReceipt(Order order) {
         try {
             // Create receipts folder if it doesn’t exist
-            File directory = new File("receipts");
-            if (!directory.exists()) {
-                directory.mkdir();
-            }
+//            File directory = new File("receipts");
+//            if (!directory.exists()) {
+//                directory.mkdir();
+//            }
 
             // Write receipt text to file
             FileWriter writer = new FileWriter(order.getReceiptFileName());
