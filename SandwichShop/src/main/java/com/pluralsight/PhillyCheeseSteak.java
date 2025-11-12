@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PhillyCheeseSteak extends SignatureSandwich{
 
 
-    public PhillyCheeseSteak(String name, String bread, int length, boolean toasted) {
+    public PhillyCheeseSteak() {
         super("Philly Cheese Steak", "white", 8, true);
     }
 

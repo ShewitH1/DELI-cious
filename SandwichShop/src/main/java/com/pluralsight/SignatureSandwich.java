@@ -13,6 +13,22 @@ public abstract class SignatureSandwich extends Sandwich{
 
     public abstract String get_Signature_name();
 
+    @Override
+    public String toString() {
+        String toppingsList = "";
+
+        for (Topping topping : getToppings()) {
+            if (!toppingsList.isEmpty()) {
+                toppingsList += ", ";
+            }
+            toppingsList += topping.getName();
+        }
+
+        String toastedText = isToasted() ? ", toasted" : "";
+
+        return get_Signature_name() + " (" + getLength() + " inch, " + getBread() + toastedText + ") [" +
+                toppingsList + "] | $" + String.format("%.2f", getPrice());
+    }
 
 
 }

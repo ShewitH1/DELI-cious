@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BLT extends SignatureSandwich{
 
 
-    public BLT(String name, String bread, int length, boolean toasted) {
+    public BLT() {
         super("BLT", "white", 8, true);
     }
 

@@ -10,11 +10,12 @@ public class OrderMenu {
         String Order_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
                 -----------Order Screen Menu-----------
-                ~ Enter                               -
+                ~ Enter                              -
                  1 ) Add Sandwich                    -
                  2 ) Add Drink                       -
                  3 ) Add Chips                       -
-                 4 ) Checkout                        -
+                 4) Add Custom Sandwich              -
+                 5 ) Checkout                        -
                  0 ) Cancel Order                    -
                 ---------------------------------------
                 """;
@@ -44,6 +45,11 @@ public class OrderMenu {
                         break;
 
                     case 4:
+                        //custom sandwich
+
+                        break;
+
+                    case 5:
                         //Checkout
                         checkout();
                         break;
@@ -63,6 +69,34 @@ public class OrderMenu {
         }
 
         //Adding Sandwich method
+        private static void custom_sandwich(){
+            System.out.println("1) BLT\n2) Philly Cheese Steak\n3) Custom Sandwich");
+            int custom = ConsoleHelper.promptForInt("Choose a signature sandwich");
+            Sandwich sandwich = null;
+            switch (custom){
+                case 1:
+                    sandwich = new BLT();
+                    break;
+                case 2:
+                    sandwich = new PhillyCheeseSteak();
+                    break;
+
+                case 3:
+                    sandwich = AddSandwich.sandwich_screen();
+                    break;
+                default:
+                    System.out.println("Invalid choice. Try again!");
+                    return;
+            }
+
+            if(sandwich != null){
+                current_order.addProduct(sandwich);
+                System.out.println(sandwich.getDescription() + "added!");
+            }
+        }
+
+
+
         private static void AddSandwich(){
             Sandwich sandwich = AddSandwich.sandwich_screen();
             if(sandwich != null){
