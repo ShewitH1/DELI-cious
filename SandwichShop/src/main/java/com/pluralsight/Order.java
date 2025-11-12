@@ -79,8 +79,17 @@ public class Order {
             }
         }
 
+        //just give a summary nothing else lol
+        double total = getTotal();
 
+        receipt.append("-----------------------------------------------------------\n");
+        receipt.append(String.format("%-40s $%5.2f\n", "Total:", total));
+        receipt.append("-----------------------------------------------------------\n");
 
+        //this is for the footer
+        receipt.append("Thank you for visiting Delicious Sandwiches!\n");
+        receipt.append("We appreciate your business — come back soon!\n");
+        receipt.append("===========================================================\n");
 
 
         return receipt.toString();
