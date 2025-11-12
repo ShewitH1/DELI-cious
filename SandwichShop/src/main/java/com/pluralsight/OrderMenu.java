@@ -93,16 +93,37 @@ public class OrderMenu {
             if(current_order.isEmpty()){
                 System.out.println("Your order is empty! Please add items before checkout!");
             }
-            else{
-                System.out.println("\n ------Summary of Order-------");
+//            else{
+//                System.out.println("\n ------Summary of Order-------");
+//                current_order.printReceipt();
+//
+//                String confirm = ConsoleHelper.promptForString("Confirm checkout? (y/n)");
+//                if (confirm.equalsIgnoreCase("y")) {
+//                    System.out.println("Order confirmed!");
+//                    current_order = new Order(); // reset
+//                } else {
+//                    System.out.println("Returning to Order Menu.");
+//                }
+
+
+                System.out.println("\n------ Summary of Order ------");
                 current_order.printReceipt();
 
                 String confirm = ConsoleHelper.promptForString("Confirm checkout? (y/n)");
                 if (confirm.equalsIgnoreCase("y")) {
-                    System.out.println("Order confirmed!");
-                    current_order = new Order(); // reset
+                    System.out.println("\n Order confirmed!");
+                    System.out.println("Saving receipt...");
+
+                    // Create file manager and save receipt
+                    SandwichFileManager fileManager = new SandwichFileManager();
+                    fileManager.SaveSandwichReceipt(current_order);
+
+                    // Reset order after saving
+                    current_order = new Order();
+                    System.out.println("\nReturning to Order Menu...\n");
+
                 } else {
-                    System.out.println("Returning to Order Menu.");
+                    System.out.println("Returning to Order Menu...");
                 }
             }
 
@@ -121,8 +142,6 @@ public class OrderMenu {
 //                System.out.println("Returning to Order Menu.");
 //            }
 
-
-        }
 
         //not sure if i want to make a method for this functionality
         public static void cancelOrder(){

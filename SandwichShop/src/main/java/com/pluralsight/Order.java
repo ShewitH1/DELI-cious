@@ -1,60 +1,69 @@
+
 package com.pluralsight;
 
-import java.util.ArrayList;
+import java.io.*;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
 
 public class Order {
-    private ArrayList<ProdcutOrder> products = new ArrayList<>();
 
-    public void addProduct(ProdcutOrder product){
+    private ArrayList<ProdcutOrder> products = new ArrayList<>();
+    private LocalDateTime orderTime;
+    private String receiptFileName;
+    private static int orderCounter = 0;
+
+    public Order() {
+        this.orderTime = LocalDateTime.now();
+        orderCounter++;
+        // Create folder name and timestamped filename
+        this.receiptFileName = "receipts/" + orderTime.format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-")) + orderCounter + ".txt";
+    }
+
+    //Add products
+    public void addProduct(ProdcutOrder product) {
         products.add(product);
     }
 
-    //get total method
+    //Calculate total price
     public double getTotal() {
         double total = 0.0;
         for (ProdcutOrder p : products) {
-//            total += p.getPrice();
             total += p.getPrice();
         }
         return total;
     }
 
+    //Generate receipt text (like Matt’s example)
+    public String getReceiptContent() {
+        StringBuilder receipt = new StringBuilder("🧾━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━🧾\n");
+        receipt.append("Date: ").append(orderTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))).append("\n\n");
 
-//    public void printReceipt() {
-//        System.out.println("Your Order:");
-//        for (ProdcutOrder p : products) {
-//            System.out.println("- " + p.getDescription() +  " ($" + String.format("%.2f", p.getPrice()) + ")");
-//        }
-//        System.out.println("Total: $" + String.format("%.2f", getTotal()));
-//    }
-
-    //might add toppings and sauces to reciept
-    public void printReceipt(){
-        System.out.println("Your Order: ");
-//        for(ProdcutOrder p : products){
-//            if (p instanceof Sandwich){
-//                System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
-//            } else if (p instanceof Drink) {
-//                System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
-//            }
-//            else if (p instanceof Chips){
-//                System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.calculatePrice()) + ")");
-//            }
-//        }
-
-// matt's version...
-        for(ProdcutOrder p : products){
-            System.out.println(p.getDescription() + " ($" + String.format("%.2f", p.getPrice()) + ")");
+        // Sandwiches
+        boolean hasSandwiches = false;
+        for (ProdcutOrder p : products) {
+            if (p instanceof Sandwich) {
+                if (!hasSandwiches) {
+                    receipt.append("Sandwiches:\n");
+                    hasSandwiches = true;
+                }
+                receipt.append("  - ").append(p).append("\n");
+            }
         }
-
-        System.out.println("Total: $" + String.format("%.2f", getTotal()));
     }
 
+
+    //Getters
     public ArrayList<ProdcutOrder> getProducts() {
         return products;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return products.isEmpty();
     }
+
+    public String getReceiptFileName() {
+        return receiptFileName;
+    }
 }
+
