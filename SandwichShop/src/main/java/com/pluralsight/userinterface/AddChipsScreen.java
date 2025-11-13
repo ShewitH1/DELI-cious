@@ -1,4 +1,9 @@
-package com.pluralsight;
+package com.pluralsight.userinterface;
+
+import com.pluralsight.models.Chips;
+import com.pluralsight.userinterface.ConsoleHelper;
+
+
 
 public class AddChipsScreen {
     public static Chips chips_screen(){

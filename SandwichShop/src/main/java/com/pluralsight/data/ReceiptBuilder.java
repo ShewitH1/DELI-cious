@@ -1,4 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.data;
+
+import com.pluralsight.models.*;
 
 import java.time.format.DateTimeFormatter;
 

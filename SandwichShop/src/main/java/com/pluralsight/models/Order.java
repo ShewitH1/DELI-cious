@@ -1,6 +1,7 @@
-package com.pluralsight;
+package com.pluralsight.models;
 
-import java.io.*;
+import com.pluralsight.data.ReceiptBuilder;
+
 import java.time.*;
 import java.time.format.*;
 import java.util.*;

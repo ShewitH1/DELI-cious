@@ -1,6 +1,7 @@
 package com.pluralsight;
 
-import static com.pluralsight.UserInterface.HomeScreen;
+
+import static com.pluralsight.userinterface.UserInterface.HomeScreen;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

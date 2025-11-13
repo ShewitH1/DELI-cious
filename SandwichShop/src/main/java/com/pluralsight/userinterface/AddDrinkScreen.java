@@ -1,4 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.userinterface;
+
+import com.pluralsight.userinterface.ConsoleHelper;
+
+import com.pluralsight.models.Drink;
 
 import java.util.Arrays;
 

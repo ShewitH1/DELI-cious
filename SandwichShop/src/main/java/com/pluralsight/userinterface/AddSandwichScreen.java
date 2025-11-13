@@ -1,4 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.userinterface;
+
+import com.pluralsight.models.Sandwich;
+import com.pluralsight.models.Topping;
+import com.pluralsight.userinterface.ConsoleHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;

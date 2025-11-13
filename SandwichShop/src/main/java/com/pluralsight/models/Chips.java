@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.models;
 
 public class Chips extends ProdcutOrder {
     private String flavor;

@@ -1,4 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.userinterface;
+
+import com.pluralsight.models.Order;
+import com.pluralsight.data.SandwichFileManager;
+import com.pluralsight.models.*;
 
 public class OrderMenu {
 

@@ -1,8 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.models;
 
 import java.util.ArrayList;
 
-public class PhillyCheeseSteak extends SignatureSandwich{
+public class PhillyCheeseSteak extends SignatureSandwich {
 
 
     public PhillyCheeseSteak() {

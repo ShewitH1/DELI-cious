@@ -1,9 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.models;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import com.pluralsight.userinterface.ConsoleHelper;
 
-public abstract class SignatureSandwich extends Sandwich{
+public abstract class SignatureSandwich extends Sandwich {
     private String signature_name;
     public SignatureSandwich(String name, String bread, int length, boolean toasted) {
         super(name, bread, length, toasted);
