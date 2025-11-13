@@ -24,10 +24,10 @@ public class BLT extends SignatureSandwich{
 
     }
 
-    @Override
-    public String get_Signature_name() {
-        return "BLT";
-    }
+//    @Override
+//    public String get_Signature_name() {
+//        return "BLT";
+//    }
 
     //ask matt should I do calculate price
 
