@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class AddChips {
+public class AddChipsScreen {
     public static Chips chips_screen(){
         //make sure I add initializing  data - reservation
         String flavor = " ";
@@ -73,7 +73,7 @@ public class AddChips {
 
         //make object
 //        Chips chips = new Chips("Chips", 1.50, flavor);
-        Chips chips = new Chips(flavor + " Chips", 1.50, flavor);
+        Chips chips = new Chips(flavor + " Chips", flavor);
         System.out.println("Chips added: " + chips);
         return chips;
 

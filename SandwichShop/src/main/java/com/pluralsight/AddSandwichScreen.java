@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AddSandwich {
+public class AddSandwichScreen {
 
     public static Sandwich sandwich_screen(){
         //make sure I add initializing - default data - reservation
@@ -89,10 +89,10 @@ public class AddSandwich {
         while(true){
             bread = ConsoleHelper.promptForString("Choose bread (White / Wheat / Rye / Wrap)").toLowerCase();
 
-            //String[] breadOptions = { "one", "two", "three"};
-           // String finalBread = bread;
-           // boolean isBreadInBreadOptions =  Arrays.stream(breadOptions).anyMatch(option -> option.equalsIgnoreCase(finalBread));
-            if (bread.equalsIgnoreCase("white") || bread.equalsIgnoreCase("wheat") || bread.equalsIgnoreCase("rye") || bread.equalsIgnoreCase("wrap")){
+            String[] breadOptions = { "White", "Wheat", "Rye", "Wrap"};
+            String finalBread = bread;
+            boolean isBreadInBreadOptions =  Arrays.stream(breadOptions).anyMatch(option -> option.equalsIgnoreCase(finalBread));
+            if (isBreadInBreadOptions){
                 System.out.println("Bread Selected: " + bread);
                 return bread;
             }

@@ -1,7 +1,5 @@
 package com.pluralsight;
 
-import java.sql.SQLOutput;
-
 public class OrderMenu {
 
     private static Order current_order = new Order();
@@ -82,7 +80,7 @@ public class OrderMenu {
                     break;
 
                 case 3:
-                    sandwich = AddSandwich.sandwich_screen();
+                    sandwich = AddSandwichScreen.sandwich_screen();
                     break;
                 default:
                     System.out.println("Invalid choice. Try again!");
@@ -107,7 +105,7 @@ public class OrderMenu {
 
 
         private static void AddSandwich(){
-            Sandwich sandwich = AddSandwich.sandwich_screen();
+            Sandwich sandwich = AddSandwichScreen.sandwich_screen();
             if(sandwich != null){
                 current_order.addProduct(sandwich);
             }
@@ -115,7 +113,7 @@ public class OrderMenu {
 
         //Adding Drink method
         private static void addDrink(){
-            Drink drink = AddDrink.drink_screen();
+            Drink drink = AddDrinkScreen.drink_screen();
             if(drink != null){
                 current_order.addProduct(drink);
             }
@@ -124,7 +122,7 @@ public class OrderMenu {
 
         //Adding Chips method
         public static void addChips(){
-            Chips chips = AddChips.chips_screen();
+            Chips chips = AddChipsScreen.chips_screen();
             if(chips != null){
                 current_order.addProduct(chips);
             }

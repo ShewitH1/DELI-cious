@@ -5,11 +5,9 @@ public class Drink extends ProdcutOrder{
     private String flavor;
 
     public Drink(String name, String size, String flavor) {
-//        super(name, price);
         super(name);
         this.size = size;
         this.flavor = flavor;
-//        this.setPrice(getPrice());  //compute price based on drink size
     }
 
     @Override

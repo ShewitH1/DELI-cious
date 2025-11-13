@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.util.Arrays;
 
-public class AddDrink {
+public class AddDrinkScreen {
     public static Drink drink_screen(){
 
         //make sure I add initializing  data - reservation

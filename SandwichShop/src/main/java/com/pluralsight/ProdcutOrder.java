@@ -2,11 +2,9 @@ package com.pluralsight;
 
 public abstract class ProdcutOrder {
     private String name;
-//    private double price;  //keep this
 
     public ProdcutOrder(String name) {
         this.name = name;
-//        this.price = price;  //dont keep this
     }
 
     public String getName() {

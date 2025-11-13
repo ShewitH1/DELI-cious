@@ -3,11 +3,10 @@ package com.pluralsight;
 public class Chips extends ProdcutOrder {
     private String flavor;
 
-    public Chips(String name, double price, String flavor) {
-//        super(name, price);
+    public Chips(String name,  String flavor) {
         super(name);
         this.flavor = flavor;
-//        this.setPrice(calculatePrice());
+
     }
 
     public String getFlavor() {

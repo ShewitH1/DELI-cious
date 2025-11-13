@@ -1,0 +1,22 @@
+
+=================  DELICIOUS SANDWICHES  =================
+Date: Nov 13, 2025  01:38 AM
+-----------------------------------------------------------
+Sandwiches:
+-----------------------------------------------------------
+  4 inch wheat sandwich (toasted)     $10.45
+   Toppings: salami, cheddar, lettuce, onions, cucumbers
+
+Drinks:
+-----------------------------------------------------------
+  medium water drink                  $ 2.50
+
+Chips:
+-----------------------------------------------------------
+  Sour Cream and Onion Chips          $ 1.50
+-----------------------------------------------------------
+Total:                                   $14.45
+-----------------------------------------------------------
+Thank you for visiting Delicious Sandwiches!
+We appreciate your business — come back soon!
+===========================================================

@@ -3,7 +3,7 @@ package com.pluralsight;
 
 public class UserInterface {
 
-    public void HomeScreen(){
+    public static void HomeScreen(){
 
         String Home_screen_options = """
                  *-------- DELICIOUS sandwiches --------*

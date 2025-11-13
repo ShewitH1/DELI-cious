@@ -10,7 +10,7 @@ public class SandwichFileManager {
         try {
             // Write receipt text to file
             FileWriter writer = new FileWriter(order.getReceiptFileName());
-            writer.write(order.getReceiptContent());
+            writer.write(ReceiptBuilder.getReceiptContent(order));
             writer.close();
 
             System.out.println("Receipt saved to: " + order.getReceiptFileName());

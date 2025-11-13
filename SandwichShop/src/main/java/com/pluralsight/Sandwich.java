@@ -7,7 +7,6 @@ public class Sandwich extends ProdcutOrder {
     private String bread;
     private int length;
     private boolean toasted;
-    //    private double pricee;
     private List<Topping> toppings = new ArrayList<>();
 
 
