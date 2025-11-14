@@ -63,7 +63,7 @@ The following **additional** features are implemented:
 
 
 
-## 🎬 UML Diagram
+## UML Diagram
 ![UML Diagram Screenshot](images/UMLFINAL.png)
 
 
@@ -83,22 +83,22 @@ Separate classes for user screens (AddSandwichScreen, AddDrinkScreen, OrderMenu)
 ## Application Screens
 
 ### Home Screen - New Order functionality
-![Deli Sandwich Screenshot](images/HomeScreen.png)
+![Accounting Ledger Screenshot](images/HomeScreen.png)
 
 ### Order Screen Menu - Add Sandwich/Add Drink/Add Chips/Add Custom Sandwich
-![Deli Sandwich Screenshot](images/OrderScreenMenu.png)
+![Accounting Ledger Screenshot](images/OrderScreenMenu.png)
 
 ### AddSandwich Menu View - Customizing Personal Sandwich Options
-![Deli Sandwich Screenshot](images/AddSandwichMenu.png)
+![Accounting Ledger Screenshot](images/AddSandwichMenu.png)
 
 ### AddDrinkMenu View - Selects Drink Size and Flavor
-![Deli Sandwich Screenshot](images/AddDrinkMenu.png)
+![Accounting Ledger Screenshot](images/AddDrinkMenu.png)
 
 ### AddChipMenu View - Selects Chip Type
-![Deli Sandwich Screenshot](images/AddChipMenu.png)
+![Accounting Ledger Screenshot](images/AddChipMenu.png)
 
 ### Signature Sandwich View - Options for Signature Sandwich
-![Deli Sandwich Screenshot](images/SignatureSand.png)
+![Accounting Ledger Screenshot](images/SignatureSand.png)
 
 
 
@@ -121,7 +121,7 @@ Separate classes for user screens (AddSandwichScreen, AddDrinkScreen, OrderMenu)
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ShewitHailu/AccountingLedger.git
+   git clone https://github.com/ShewitH1/DELI-cious.git
 
 2. Open the project in IntelliJ IDEA
 
