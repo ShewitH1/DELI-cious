@@ -63,10 +63,8 @@ The following **additional** features are implemented:
 
 
 
-## 🎬 Video Walkthrough
-
-
-
+## UML Diagram
+![UML Diagram Screenshot](images/UMLFINAL.png)
 
 
 ## 📝 Notes
