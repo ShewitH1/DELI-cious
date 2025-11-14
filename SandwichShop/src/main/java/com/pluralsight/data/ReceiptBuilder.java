@@ -9,21 +9,27 @@ public class ReceiptBuilder {
     public static String getReceiptContent(Order order) {
         StringBuilder receipt = new StringBuilder();
 
-        // this is header
+        // === HEADER ===
         receipt.append("\n=================  DELICIOUS SANDWICHES  =================\n");
         receipt.append("Date: ").append(order.getOrderTime().format(DateTimeFormatter.ofPattern("MMM dd, yyyy  hh:mm a"))).append("\n");
         receipt.append("-----------------------------------------------------------\n");
 
         // for the sandwiches
-        boolean hasSandwiches_value = false;
-        for (int i = 0; i < order.getProducts().size(); i++) {
+        boolean hasSandwiches = false;
+        for(int i = 0; i<order.getProducts().size(); i++){
             ProductOrder p = order.getProducts().get(i);
-            if (!hasSandwiches_value) {
-                receipt.append("Sandwiches:\n");
-                receipt.append("-----------------------------------------------------------\n");
-                hasSandwiches_value = true;
-            }
-            receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
+
+        }
+
+
+        for (ProductOrder p : order.getProducts()) {
+            if (p instanceof Sandwich) {
+                if (!hasSandwiches) {
+                    receipt.append("Sandwiches:\n");
+                    receipt.append("-----------------------------------------------------------\n");
+                    hasSandwiches = true;
+                }
+                receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
 
                 //this is for toppings
                 Sandwich s = (Sandwich) p;
@@ -35,18 +41,16 @@ public class ReceiptBuilder {
                     // remove last comma and space
                     receipt.setLength(receipt.length() - 2);
                     receipt.append("\n");
-
                 }
-
+            }
         }// for the drinks
-        boolean hasDrinks_value = false;
-        for(int i = 0; i<order.getProducts().size(); i++){
-            ProductOrder p = order.getProducts().get(i);
+        boolean hasDrinks = false;
+        for (ProductOrder p : order.getProducts()) {
             if (p instanceof Drink) {
-                if (!hasDrinks_value) {
+                if (!hasDrinks) {
                     receipt.append("\nDrinks:\n");
                     receipt.append("-----------------------------------------------------------\n");
-                    hasDrinks_value = true;
+                    hasDrinks = true;
                 }
                 receipt.append(String.format("  %-35s $%5.2f\n", p.getDescription(), p.getPrice()));
             }
@@ -54,9 +58,7 @@ public class ReceiptBuilder {
 
         // for the chips
         boolean hasChips = false;
-
-        for(int i = 0; i<order.getProducts().size(); i++){
-            ProductOrder p = order.getProducts().get(i);
+        for (ProductOrder p : order.getProducts()) {
             if (p instanceof Chips) {
                 if (!hasChips) {
                     receipt.append("\nChips:\n");
@@ -68,10 +70,10 @@ public class ReceiptBuilder {
         }
 
         //just give a summary nothing else lol
-        double total_value = order.getTotal();
+        double total = order.getTotal();
 
         receipt.append("-----------------------------------------------------------\n");
-        receipt.append(String.format("%-40s $%5.2f\n", "Total:", total_value));
+        receipt.append(String.format("%-40s $%5.2f\n", "Total:", total));
         receipt.append("-----------------------------------------------------------\n");
 
         //this is for the footer
