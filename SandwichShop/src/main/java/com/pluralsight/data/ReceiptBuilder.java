@@ -35,6 +35,7 @@ public class ReceiptBuilder {
                     // remove last comma and space
                     receipt.setLength(receipt.length() - 2);
                     receipt.append("\n");
+
                 }
 
         }// for the drinks
