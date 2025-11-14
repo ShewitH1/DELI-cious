@@ -93,8 +93,6 @@ public class OrderMenu {
 
             //this is for if users want to customize their signature sandwich
             if(sandwich instanceof SignatureSandwich signature){
-//                String edit_sandwich = ConsoleHelper.promptForString("Do you want to customize your toppings? (y/n");
-//                boolean edit = ConsoleHelper.promptForYesNo("Do you want to customize your toppings? (y/n");
                 if(ConsoleHelper.promptForYesNo("Do you want to customize your toppings?")){
                     signature.customize_toppings();
                 }

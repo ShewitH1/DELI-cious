@@ -103,31 +103,4 @@ public abstract class SignatureSandwich extends Sandwich {
         System.out.println(name + " (" + type + ") added.");
 
     }
-
-
-//    public abstract void remove_toppings(ArrayList<Topping> toppings, String topping_name);
-//
-//    public abstract  void add_toppings(ArrayList<Topping> toppings, String topping_name);
-
-
-//    public abstract String get_Signature_name();
-
-//    @Override
-//    public String toString() {
-//        String toppingsList = "";
-//
-//        for (Topping topping : getToppings()) {
-//            if (!toppingsList.isEmpty()) {
-//                toppingsList += ", ";
-//            }
-//            toppingsList += topping.getName();
-//        }
-//
-//        String toastedText = isToasted() ? ", toasted" : "";
-//
-//        return get_Signature_name() + " (" + getLength() + " inch, " + getBread() + toastedText + ") [" +
-//                toppingsList + "] | $" + String.format("%.2f", getPrice());
-//    }
-
-
 }
