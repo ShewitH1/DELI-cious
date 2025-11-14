@@ -121,7 +121,7 @@ Separate classes for user screens (AddSandwichScreen, AddDrinkScreen, OrderMenu)
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ShewitHailu/AccountingLedger.git
+   git clone https://github.com/ShewitH1/DELI-cious.git
 
 2. Open the project in IntelliJ IDEA
 
