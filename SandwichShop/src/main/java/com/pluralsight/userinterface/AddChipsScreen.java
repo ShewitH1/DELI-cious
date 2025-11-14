@@ -10,8 +10,6 @@ public class AddChipsScreen {
         //make sure I add initializing  data - reservation
         String flavor = " ";
 
-//        Chips chips = null;
-
         String chips_screen_options = """
                 *-------- DELICIOUS sandwiches --------*
                 --------------Add Chips Menu------------
@@ -77,7 +75,6 @@ public class AddChipsScreen {
         }
 
         //make object
-//        Chips chips = new Chips("Chips", 1.50, flavor);
         Chips chips = new Chips(flavor + " Chips", flavor);
         System.out.println("Chips added: " + chips);
         return chips;

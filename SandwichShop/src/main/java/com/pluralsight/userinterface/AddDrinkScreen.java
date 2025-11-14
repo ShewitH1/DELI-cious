@@ -79,9 +79,6 @@ public class AddDrinkScreen {
 
     //add actual soda options
     private static String processSelectFlavor(){
-//        String flavor = ConsoleHelper.promptForString("Enter drink flavor");
-//        System.out.println("Flavor selected: " + flavor);
-//        return flavor;
 
         String[] flavors = {"coke", "sprite", "root beer", "dr pepper", "lemonade", "water"};
 
