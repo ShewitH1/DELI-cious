@@ -63,10 +63,8 @@ The following **additional** features are implemented:
 
 
 
-## 🎬 Video Walkthrough
-
-
-
+## 🎬 UML Diagram
+![UML Diagram Screenshot](images/UMLFINAL.png)
 
 
 ## 📝 Notes
@@ -85,22 +83,22 @@ Separate classes for user screens (AddSandwichScreen, AddDrinkScreen, OrderMenu)
 ## Application Screens
 
 ### Home Screen - New Order functionality
-![Accounting Ledger Screenshot](images/HomeScreen.png)
+![Deli Sandwich Screenshot](images/HomeScreen.png)
 
 ### Order Screen Menu - Add Sandwich/Add Drink/Add Chips/Add Custom Sandwich
-![Accounting Ledger Screenshot](images/OrderScreenMenu.png)
+![Deli Sandwich Screenshot](images/OrderScreenMenu.png)
 
 ### AddSandwich Menu View - Customizing Personal Sandwich Options
-![Accounting Ledger Screenshot](images/AddSandwichMenu.png)
+![Deli Sandwich Screenshot](images/AddSandwichMenu.png)
 
 ### AddDrinkMenu View - Selects Drink Size and Flavor
-![Accounting Ledger Screenshot](images/AddDrinkMenu.png)
+![Deli Sandwich Screenshot](images/AddDrinkMenu.png)
 
 ### AddChipMenu View - Selects Chip Type
-![Accounting Ledger Screenshot](images/AddChipMenu.png)
+![Deli Sandwich Screenshot](images/AddChipMenu.png)
 
 ### Signature Sandwich View - Options for Signature Sandwich
-![Accounting Ledger Screenshot](images/SignatureSand.png)
+![Deli Sandwich Screenshot](images/SignatureSand.png)
 
 
 
