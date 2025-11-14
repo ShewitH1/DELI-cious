@@ -114,7 +114,6 @@ public class AddDrinkScreen {
             return null;
         }
         Drink drink = new Drink("Drink", size, flavor);
-//        System.out.println("Drink added: " + drink);
         System.out.println(drink);
         return drink;
     }
