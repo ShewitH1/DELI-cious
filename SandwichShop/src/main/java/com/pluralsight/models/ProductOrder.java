@@ -1,9 +1,9 @@
 package com.pluralsight.models;
 
-public abstract class ProdcutOrder {
+public abstract class ProductOrder {
     private String name;
 
-    public ProdcutOrder(String name) {
+    public ProductOrder(String name) {
         this.name = name;
     }
 

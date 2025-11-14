@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Order {
 
-    private ArrayList<ProdcutOrder> products = new ArrayList<>();
+    private ArrayList<ProductOrder> products = new ArrayList<>();
     private LocalDateTime orderTime;
     private String receiptFileName;
     private static int orderCounter = 0;
@@ -21,14 +21,14 @@ public class Order {
     }
 
     //Add products
-    public void addProduct(ProdcutOrder product) {
+    public void addProduct(ProductOrder product) {
         products.add(product);
     }
 
     //Calculate total price
     public double getTotal() {
         double total = 0.0;
-        for (ProdcutOrder p : products) {
+        for (ProductOrder p : products) {
             total += p.getPrice();
         }
         return total;
@@ -40,7 +40,7 @@ public class Order {
     }
 
 
-    public ArrayList<ProdcutOrder> getProducts() {
+    public ArrayList<ProductOrder> getProducts() {
         return products;
     }
 

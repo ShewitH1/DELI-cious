@@ -126,4 +126,4 @@ Separate classes for user screens (AddSandwichScreen, AddDrinkScreen, OrderMenu)
 2. Open the project in IntelliJ IDEA
 
 3. Run Main.java
-4. Follow the CLI prompts to add depoits, make payments, or view your ledger
+4. Follow the CLI prompts to Add Sandwich, Add Drink, Add Chips, and Add Custom Sandwich

@@ -16,7 +16,7 @@ public class ReceiptBuilder {
 
         // for the sandwiches
         boolean hasSandwiches = false;
-        for (ProdcutOrder p : order.getProducts()) {
+        for (ProductOrder p : order.getProducts()) {
             if (p instanceof Sandwich) {
                 if (!hasSandwiches) {
                     receipt.append("Sandwiches:\n");
@@ -39,7 +39,7 @@ public class ReceiptBuilder {
             }
         }// for the drinks
         boolean hasDrinks = false;
-        for (ProdcutOrder p : order.getProducts()) {
+        for (ProductOrder p : order.getProducts()) {
             if (p instanceof Drink) {
                 if (!hasDrinks) {
                     receipt.append("\nDrinks:\n");
@@ -52,7 +52,7 @@ public class ReceiptBuilder {
 
         // for the chips
         boolean hasChips = false;
-        for (ProdcutOrder p : order.getProducts()) {
+        for (ProductOrder p : order.getProducts()) {
             if (p instanceof Chips) {
                 if (!hasChips) {
                     receipt.append("\nChips:\n");
