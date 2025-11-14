@@ -9,7 +9,7 @@ public class ReceiptBuilder {
     public static String getReceiptContent(Order order) {
         StringBuilder receipt = new StringBuilder();
 
-        // === HEADER ===
+        // this is header
         receipt.append("\n=================  DELICIOUS SANDWICHES  =================\n");
         receipt.append("Date: ").append(order.getOrderTime().format(DateTimeFormatter.ofPattern("MMM dd, yyyy  hh:mm a"))).append("\n");
         receipt.append("-----------------------------------------------------------\n");

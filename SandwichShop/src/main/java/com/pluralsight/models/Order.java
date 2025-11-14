@@ -10,14 +10,14 @@ public class Order {
 
     private ArrayList<ProductOrder> products = new ArrayList<>();
     private LocalDateTime orderTime;
-    private String receiptFileName;
+    private String fileName;
     private static int orderCounter = 0;
 
     public Order() {
         orderCounter++;
         this.orderTime = LocalDateTime.now();
         // Create folder name and timestamped filename
-        this.receiptFileName = "receipts/" + orderTime.format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-")) + orderCounter + ".txt";
+        this.fileName = "receipts/" + orderTime.format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-")) + orderCounter + ".txt";
     }
 
     //Add products
@@ -54,7 +54,7 @@ public class Order {
     }
 
     public String getReceiptFileName() {
-        return receiptFileName;
+        return fileName;
     }
 }
 
