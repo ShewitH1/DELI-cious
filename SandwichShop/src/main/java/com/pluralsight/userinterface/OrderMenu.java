@@ -136,18 +136,6 @@ public class OrderMenu {
             if (current_order.isEmpty()) {
                 System.out.println("Your order is empty! Please add items before checkout!");
             } else {
-//                System.out.println("\n ------Summary of Order-------");
-//                current_order.printReceipt();
-//
-//                String confirm = ConsoleHelper.promptForString("Confirm checkout? (y/n)");
-//                if (confirm.equalsIgnoreCase("y")) {
-//                    System.out.println("Order confirmed!");
-//                    current_order = new Order(); // reset
-//                } else {
-//                    System.out.println("Returning to Order Menu.");
-//                }
-
-
                 System.out.println("\n------ Summary of Order ------");
                 current_order.printReceipt();
 
@@ -169,22 +157,6 @@ public class OrderMenu {
                 }
             }
         }
-
-//            System.out.println("\n ------Summary of Order-------");
-//            current_order.printReceipt();
-//
-//            //this is already in my printReceipt() method
-////            System.out.println("Total: $" + String.format("%.2f", current_order.getTotal()));
-//
-//
-//            String confirm = ConsoleHelper.promptForString("Confirm checkout? (y/n)");
-//            if (confirm.equalsIgnoreCase("y")) {
-//                System.out.println("Order confirmed!");
-//                current_order = new Order(); // reset
-//            } else {
-//                System.out.println("Returning to Order Menu.");
-//            }
-
 
         //not sure if i want to make a method for this functionality
         public static void cancelOrder(){

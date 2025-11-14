@@ -25,23 +25,12 @@ public class Drink extends ProdcutOrder {
         }
     }
 
-
-//    private double getSizePrice(String size){
-//        return switch(size.toLowerCase()) {
-//            case "small" -> 2.00;
-//            case "medium" -> 2.50;
-//            case "large" -> 3.00;
-//            default -> 0.0;
-//        };
-//    }
-
     public String getSize() {
         return size;
     }
 
     public void setSize(String size) {
         this.size = size;
-//        setPrice(getPrice());
     }
 
     public String getFlavor() {

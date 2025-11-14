@@ -8,7 +8,6 @@ import static com.pluralsight.userinterface.UserInterface.HomeScreen;
 public class Main {
     public static void main(String[] args) {
 
-//        UserInterface main_file = new UserInterface();
         HomeScreen();
 
     }

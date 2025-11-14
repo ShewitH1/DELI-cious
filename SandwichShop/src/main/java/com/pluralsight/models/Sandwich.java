@@ -15,7 +15,6 @@ public class Sandwich extends ProdcutOrder {
         this.bread = bread;
         this.length = length;
         this.toasted = toasted;
-//        this.setPrice(calculatePrice());
     }
 
 
@@ -59,7 +58,6 @@ public class Sandwich extends ProdcutOrder {
 
     public void setBread(String bread) {
         this.bread = bread;
-//        setPrice(calculatePrice());
     }
 
     public int getLength() {
@@ -68,7 +66,6 @@ public class Sandwich extends ProdcutOrder {
 
     public void setLength(int length) {
         this.length = length;
-//        setPrice(calculatePrice());
     }
 
     public boolean isToasted() {
